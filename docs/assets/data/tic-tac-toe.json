@@ -1,0 +1,53 @@
+{  
+    "board": 
+    [
+        {
+            "index": 0,
+            "selected": false
+        },
+        {
+            "index": 1,
+            "selected": false
+        },
+        {
+            "index": 2,
+            "selected": false
+        },
+        {
+            "index": 3,
+            "selected": false
+        },
+        {
+            "index": 4,
+            "selected": false
+        },
+        {
+            "index": 5,
+            "selected": false
+        },
+        {
+            "index": 6,
+            "selected": false
+        },
+        {
+            "index": 7,
+            "selected": false
+        },
+        {
+            "index": 8,
+            "selected": false
+        }
+    ],
+
+    "winning" : [
+        [0,1,2],
+        [3,4,5],
+        [6,7,8],
+        [0,3,6],
+        [1,4,7],
+        [2,5,8],
+        [0,4,8],
+        [2,4,6]
+    ]
+
+}
