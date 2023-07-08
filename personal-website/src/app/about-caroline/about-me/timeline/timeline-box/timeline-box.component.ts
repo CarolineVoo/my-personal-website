@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import AOS from 'aos';
 
 @Component({
   selector: 'timeline-box',
@@ -16,7 +15,7 @@ export class TimelineBoxComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    AOS.init()
+
   }
 
 }

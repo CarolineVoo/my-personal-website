@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import AOS from 'aos';
 import dataTimeline from '../../../../assets/data/timeline.json';
 
 @Component({
@@ -14,7 +13,6 @@ export class TimelineComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    AOS.init();
     this.timeLine = dataTimeline;
 
   }

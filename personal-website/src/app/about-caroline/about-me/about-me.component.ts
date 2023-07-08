@@ -1,6 +1,5 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import {trigger, state, style, animate, transition} from '@angular/animations';
-import AOS from 'aos';
 
 @Component({
   selector: 'about-me',
@@ -24,7 +23,6 @@ export class AboutMeComponent implements OnInit {
   constructor(private changeDetectorRef: ChangeDetectorRef) { }
 
   ngOnInit() {
-    AOS.init();
     this.showTimeline = false;
     this.textTimeline = 'Open timeline';
     this.animation = 'close';

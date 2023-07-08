@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import * as AOS from 'aos';
 
 @Component({
   selector: 'intro',
@@ -11,7 +10,6 @@ export class IntroComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    AOS.init();
   }
 
 }
