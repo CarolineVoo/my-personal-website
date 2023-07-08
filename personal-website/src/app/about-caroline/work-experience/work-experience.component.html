@@ -1,0 +1,29 @@
+<div class="container">
+    <h1>My work experiences</h1>
+    <div class="content" data-aos="fade-zoom-in" data-aos-duration="1500" data-aos-offset="400">
+        <div *ngFor="let workExperience of workExperiences; let i = index">
+            <div *ngIf="i >= first && i < end" class="box" data-aos="fade-zoom-in" data-aos-duration="1500">
+                <div class="logo">
+                    <img [src]="workExperience.image"/>
+                </div>
+                <div class="description">
+                    <h4>{{workExperience.title}}</h4>
+                    <p>{{workExperience.description}}</p>
+                    <p class="date">{{workExperience.yearFromTo}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-dots">
+        <button class="nextPrev" (click)="Previous()">
+            <img class="arrow" src="../../../assets/images/shared/left-arrow.png"/>
+        </button>
+        <span (click)="setLevel(0)" #one class="dots"></span>
+        <span (click)="setLevel(1)" #two class="dots"></span>
+        <button class="nextPrev" (click)="Next()">
+            <img class="arrow" src="../../../assets/images/shared/right-arrow.png"/>
+        </button>
+    </div>
+</div>
+

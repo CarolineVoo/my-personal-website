@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="wrapper" data-aos="fade-zoom-in" data-aos-duration="1500" data-aos-offset="500">
+        <h1>Web Technology Skills</h1>
+        <p class="description"> This is a list of different programming technologies that I'm using to develop. 
+            I have provided different skill levels <br/> that present how experienced I am with the technology.
+        </p>
+        <div data-aos="fade-up" data-aos-duration="1000" data-aos-offset="300">
+            <div class="grid-container {{cssHide}}">
+                <div *ngFor="let items of technology" class="grid-item">
+                    <h3>{{items.title}}</h3>
+                    <img class="tech-img" [src]="items.img" />
+                    <div>
+                        <span class="skill-text">Skill:</span>
+                        <span *ngFor="let skill of items.skills">
+                            <span *ngFor="let level of skill.level" class="skill"></span>
+                        </span>
+                        <span *ngFor="let skill of items.skills">
+                            <span *ngFor="let level of skill.noLevel" class="noSkill"></span>
+                        </span>
+                    </div>
+                    <p class="content">{{items.content}}</p><br>
+                    <div class="link-container">
+                       <a class="link" [href]="items.url">Read more</a> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="btn-show-more" (click)="onShowMore()"> {{showMoreBtnTxt}} </button>
+        <div *ngIf="!showMore" class="gradient"></div>
+    </div>
+</div>

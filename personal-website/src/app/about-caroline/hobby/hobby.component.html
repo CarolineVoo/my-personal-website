@@ -1,0 +1,64 @@
+<div class="container">
+    <!-- <img id="corner-top" src="../../assets/images/header--corner.png">
+    <img id="corner-bottom" src="../../assets/images/header--corner.png"> -->
+    <div class="wrapper" data-aos="fade-zoom-in" data-aos-duration="1500" data-aos-offset="400">
+      
+      <h1>Hobby</h1>
+      <p class="description"> I'm telling you about my hobby and what I like to do during the free time. </p>
+  
+      <div class="content-container" *ngIf="show" data-aos="fade-zoom-in" data-aos-duration="1500">
+        <img id="corner-top" src="../../../assets/images/shared/small-corner.png"> 
+        <img id="corner-bottom" src="../../../assets/images/shared/small-corner.png"> 
+      <div class="content">
+          <span class="vertical">
+              <h2>{{hobbySections[level].title}}</h2>
+              <p>{{hobbySections[level].content}}</p>
+          </span>
+      </div>
+      <div class="image">
+        <img [src]="hobbySections[level].img"/> 
+      </div>      
+    </div>
+  
+  
+      <div class="bottom-dots">
+        <button class="nextPrev" (click)="Previous()">
+          <img class="arrow" src="../../../assets/images/shared/left-arrow.png"/>
+        </button>
+        <span (click)="setLevel(0)" #one class="dots"></span>
+        <span (click)="setLevel(1)" #two class="dots"></span>
+        <span (click)="setLevel(2)" #three class="dots"></span>
+        <span (click)="setLevel(3)" #four class="dots"></span>
+        <button class="nextPrev" (click)="Next()">
+          <img class="arrow" src="../../../assets/images/shared/right-arrow.png"/>
+        </button>
+      </div>
+      
+    </div>
+  </div>
+  
+  
+      <!-- <div class="content-container" *ngIf="previous" data-aos="fade-right" data-aos-duration="1500">
+          <div class="image">
+            <img [src]="hobbySections[level].img"/> 
+          </div>
+        <div class="content">
+            <span class="vertical">
+                <h2>{{hobbySections[level].title}}</h2>
+                <p>Taekwondo is thaaaa beeest</p>
+            </span>
+        </div>      
+      </div>
+  
+      <div class="content-container" *ngIf="next" data-aos="fade-left" data-aos-duration="1500">
+        <div class="image">
+          <img [src]="hobbySections[level].img"/> 
+        </div>
+        <div class="content">
+            <span class="vertical">
+                <h2>{{hobbySections[level].title}}</h2>
+                <p>Taekwondo is thaaaa beeest</p>
+            </span>
+        </div>      
+      </div> -->
+  

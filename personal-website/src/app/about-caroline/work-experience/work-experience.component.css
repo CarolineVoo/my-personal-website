@@ -1,0 +1,156 @@
+.container {
+    background-color: #658078;
+    height: 800px;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    position: relative;
+}
+
+h1 {
+    text-align: center;
+    font-weight: 300;
+    font-size: 35px;
+    margin-bottom: 30px;
+    padding-top: 40px;
+    color: #fff;
+}
+
+h4 {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 7.5px;
+}
+
+p {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.content {
+    width: 60%;
+    margin: 0 auto;
+    height: 500px;
+}
+
+.box {
+    display: block;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #526861;
+    padding: 25px 0;
+}
+
+.logo img {
+    width: 80px;
+    height: auto;
+    border-radius: 100px;
+}
+
+
+.description {
+    margin-left: 20px;
+    width: 100%;
+}
+
+.date {
+    margin-top: 10px;
+    font-weight: 300;
+    font-size: 13px;
+}
+
+/* 
+.header {
+    position: relative;
+    width: 100%;
+}
+
+.header p{
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-weight: 300;
+    font-size: 13px;
+} */
+
+.nextPrev {
+    background-color: transparent;
+    border: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #d8ede7;
+    font-size: 15px;
+
+}
+
+.bottom-dots {
+    position: absolute;
+    width: 300px;
+    text-align: center;
+    margin: 30px auto 10px auto;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+}
+
+.dots {
+    display: inline-block;
+    height: 12px;
+    width: 12px;
+    border-radius: 50px;
+    margin: 0px 14px 0 14px;
+    content: "";
+    vertical-align: middle; 
+}
+
+.arrow {
+    width: 17px;
+    height: auto;
+    vertical-align: middle;
+}
+
+.arrow:first-of-type {
+    margin-right: 23px;
+}
+
+.arrow:last-of-type {
+    margin-left: 23px;
+}
+
+@media only screen and (max-width: 1450px) { 
+    .content {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 900px) { 
+    .content {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 785px) { 
+    .content {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 701px) { 
+    .container {
+        height: 850px;
+    }
+}
+
+@media only screen and (max-width: 625px) { 
+    .container {
+        height: 900px;
+    }
+}
+
+@media only screen and (max-width: 525px) { 
+    .container {
+        height: 950px;
+    }
+}
+
+@media only screen and (max-width: 425px) { 
+
+}
