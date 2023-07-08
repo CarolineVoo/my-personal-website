@@ -1,0 +1,161 @@
+.container {
+    height: 100vh;
+    background-image: linear-gradient(rgba(101,128,120, 0.8), rgba(101,128,120, 0.6)), url(../../../assets/images/header/forest.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+    position: relative;
+}
+
+.nav {
+    position: absolute;
+    top: 15px;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    z-index:10;
+}
+
+.nav-list li {
+    display: inline;
+    z-index: 10;
+    padding: 0 50px;
+    border-left: 1px solid #d8ede7;
+    font-weight: 100px;
+}
+
+.nav-list li:first-of-type {
+    border: 0;
+}
+
+.nav-list li a {
+    color: #d8ede7;
+    font-size: 18px;
+    font-weight: 300;
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+.nav-list li a:hover {
+    color: #ffb300;
+}
+
+.content {
+    width: 70%;
+    margin: 20vh auto;
+    text-align: center;
+}
+
+
+h1 {
+    font-weight: 200;
+    font-size: 95px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+p {
+    font-weight: 200;
+    font-size: 37px;
+    color: white;
+}
+
+p::after {
+    display: block;
+    content: "";
+    width: 75px;
+    border: 0.25px solid white;
+    margin: 20px auto 0 auto;
+}
+
+.content img {
+    margin-top: 30px;
+    margin-left: 100px;
+    width: 400px;
+  
+}
+
+.arrow-container {
+    position: absolute;
+    bottom: 35px;
+    text-align: center;
+    width: 100%;
+}
+
+#arrow {
+    width: 45px;
+    margin: 0 auto;
+}
+
+@media only screen and (max-width: 1100px) {
+    h1 {
+        font-size: 80px;
+    }
+
+    .content {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 770px) {
+    .nav-list li {
+        padding: 0 30px;
+    }
+
+    h1 {
+        font-size: 50px;
+    }
+
+    p {
+        font-size: 27px;
+    }
+
+    .content img {
+        margin-top: 60px;
+      
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .nav-list li {
+        padding: 0 20px;
+    }
+}
+
+
+@media only screen and (max-width: 560px) {
+    h1 {
+        font-size: 40px;
+    }
+
+    p {
+        font-size: 20px;
+    }
+
+    .content {
+        margin: 30vh auto;
+    }
+
+    .content img {
+        margin-top: 60px;
+      margin-left: 20px;
+    }
+
+    #arrow {
+        width: 30px;
+        margin: 0 auto;
+    }
+}
+
+
+@media only screen and (max-width: 510px) {
+    .nav-list li {
+        padding: 0 15px;
+    }
+
+    .nav-list li a {
+        font-size: 16px;
+    }
+
+}

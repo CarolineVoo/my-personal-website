@@ -1,0 +1,199 @@
+.container {
+    font-family: 'Roboto', sans-serif;
+    position: absolute;
+    top: -150px;
+    height: 300px;
+    width: 480px;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 0 40px;
+    border-radius: 25px;
+}
+
+.second-container {
+    height: 100%;
+    display: table;
+}
+
+.right {
+    right: 100px;
+}
+
+.left {
+    left: 100px
+}
+
+
+.time-img {
+    margin-top: 35px;
+    background-color:#516e67;
+    width: 180px;
+    height: auto;
+    vertical-align: middle;
+    float: left;
+    border: 7px solid #516e67;
+    border-radius: 10px;
+    box-shadow: 2px 1px 7px #474747;
+}
+
+.content {
+    display: table;
+    height: 100%;
+    padding-left: 30px;
+}
+
+h2 {
+    font-weight: 400;
+    font-size: 20px;
+    margin-bottom: 7px;
+}
+
+p {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 28px;
+}
+
+.year {
+    font-size: 17px;
+    font-weight: 300;
+}
+
+.vertical {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+@media only screen and (min-width: 1900px) {
+    .right {
+        right: 200px;
+    }
+    
+    .left {
+        left: 200px
+    }
+    
+}
+
+@media only screen and (max-width: 1440px) {   
+    .container {
+        top: -100px;
+        height: 250px;
+        width: 430px;
+    }
+
+    .time-img {
+        width: 130px;
+    }
+
+    .right {
+        right: 50px;
+    }
+    
+    .left {
+        left: 50px;
+    }
+    
+}
+
+@media only screen and (max-width: 1240px) {  
+    h2 {
+        font-size: 18px;
+    } 
+
+    p {
+        font-size: 14px;
+    }
+    .container {
+        height: 230px;
+        width: 410px;
+    }
+
+    .right {
+        right: 20px;
+    }
+    
+    .left {
+        left: 20px;
+    }
+    
+}
+
+@media only screen and (max-width: 1125px) {  
+    .container {
+        top: -150px;
+        height: auto;
+        width: 200px;
+        padding-bottom: 20px;
+
+    }
+    .content {
+        height: auto;
+        padding-left: 0;
+        margin-top: 20px;
+    }
+
+    .time-img {
+        float: none;
+        margin: 0 auto;
+        display: block;
+        margin-top: 30px;
+    }
+
+    .right {
+        right: 100px;
+    }
+    
+    .left {
+        left: 100px;
+    }
+}
+
+@media only screen and (max-width: 900px) {  
+    .right {
+        right: 50px;
+    }
+    
+    .left {
+        left: 50px;
+    }
+    
+}
+
+@media only screen and (max-width: 770px) {  
+    .right {
+        right: 10px;
+    }
+    
+    .left {
+        left: 10px;
+    }
+    
+}
+
+@media only screen and (max-width: 680px) {  
+    .container {
+        top: 0;
+        position: relative;
+        padding: 20px;
+        height: auto;
+        width: 80%;
+        margin: 0 auto 20px auto;
+    }
+
+    .time-img {
+        float: left;
+        margin: 0;
+    }
+    
+    .content {
+        height: auto;
+        padding-left: 0;
+        margin: 10px 0 0 170px;
+    }   
+}
+
+@media only screen and (max-width: 550px) {  
+    .content {
+        margin: 0px 0 0 170px;
+    }   
+}

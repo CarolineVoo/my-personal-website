@@ -1,0 +1,200 @@
+.header-container {
+    position: relative;
+    background-color: #f6f6f6;
+    font-family: 'Roboto', sans-serif;
+    height: 85vh;
+    overflow: hidden;
+}
+
+#image-top {
+    left: 0;
+    height: 100%;
+    width: auto;
+    z-index: 0;
+}
+
+#image-bottom {
+    display: none;
+}
+
+#image-corner{
+    position: absolute;
+    right: 0;
+    height: 30%;
+    width: auto;
+    z-index: 0;
+}
+
+.content{
+    position: absolute;
+    right: 19%;
+    top: 15%;
+    color: #000;
+    text-align: center;
+}
+
+.content h1 {
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 50px;
+    color: #516e67;
+}
+
+.content p {
+    margin-top: 10px;
+    font-weight: 200;
+    font-size: 21px;
+    line-height: 40px;
+}
+
+#orange {
+    color: #516e67;
+    font-weight: 500;
+}
+
+#header-button {
+    margin: 50px auto;
+    padding: 13px 60px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 100;
+    text-transform: uppercase;
+    box-shadow: 1px 1px 5px #2f3d39;
+    letter-spacing: 2px;
+    background-color: #516e67;
+    border: 0;
+    border-radius: 100px;
+    transition: background-color 0.25s, color 0.25s;
+}
+
+#header-button:hover {
+    background-color: #74807d;
+    color:#cccccc;
+} 
+
+
+
+@media only screen and (max-width: 1600px) {
+    .content{
+        right: 15%;
+    }
+    
+
+}
+
+@media only screen and (max-width: 1400px) {
+    .content{
+        right: 10%;
+    }
+
+}
+
+@media only screen and (max-width: 1350px) {
+    .content{
+        right: 5%;
+    }
+
+}
+
+@media only screen and (max-width: 1350px) {
+    .content{
+        right: 5%;
+    }
+
+}
+
+@media only screen and (max-width: 1250px) {   
+    #image-top {
+        margin-left: -100px;
+    }
+
+    #image-corner {
+        height: 25%;
+    }
+
+    .content h1 {
+        font-size: 40px;
+    }
+    
+    .content p {
+        font-size: 18px;
+    }
+}
+
+
+
+@media only screen and (max-width: 1100px) {   
+    #image-top {
+        margin-left: -150px;
+    }
+}
+
+@media only screen and (max-width: 1030px) {   
+    #image-top {
+        margin-left: -170px;
+    }
+
+    #image-corner {
+        display: none;
+    }
+
+    .content{
+        right: 0%;
+    }
+}
+
+
+@media only screen and (max-width: 950px) {   
+    .header-container {
+        height: 90vh;
+    }
+    
+    #image-top {
+        display: none;
+    }
+
+    #image-bottom {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    #image-corner {
+        display: none;
+    }
+
+    .content{
+        position: relative;
+        top: 0;
+        margin-top: 50px;
+        display: block;
+        width: 100%;
+    }
+
+}
+
+@media only screen and (max-width: 730px) {   
+
+    #image-bottom {
+        position: absolute;
+        bottom: 0;
+    }
+}
+
+@media only screen and (max-width: 630px) {   
+    #image-bottom {
+        width: 630px;
+    }
+}
+
+@media only screen and (max-width: 520px) {   
+    #image-bottom {
+        width: 520px;
+    }
+}
+
+@media only screen and (max-width: 420px) {   
+    #image-bottom {
+        width: 420px;
+    }
+}

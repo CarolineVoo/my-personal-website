@@ -1,0 +1,33 @@
+
+<div class="container">
+    <div class="wrapper">
+        <div class="content-container" data-aos="fade-zoom-in" data-aos-duration="2000" data-aos-offset="600">
+            <div class="image">
+                <img src="../../../assets/images/about-me/carro.png"/> 
+            </div>
+            <div class="content">
+                <span class="vertical"> 
+                    <h1>About me</h1>
+                    <p>My name is Caroline Vo, and I work as a Software Engineer consultant at Capgemini 
+                        Norway in Oslo. I previously studied a bachelor degree in Information Technology 
+                        at Oslo Metropolitan University. Grew up in a small town called Askim, but later moved 
+                        to Oslo to study and to find a permanent job more easily. I am a person who is interested 
+                        in design within programming, and therefore enjoy working as a Frontend developer, 
+                        which means developing what the user sees on a website.</p>
+                    <p class="timeline-text">See timeline of the evolution of my life!</p>
+                    <!-- <button class="btn-timeline">timeline</button> -->
+                </span>
+            </div> 
+        </div>
+             
+    </div>
+
+    <div class="arrow-timeline">
+        <button class="btnArrow" (click)="show()">
+            {{textTimeline}}
+            <img [@rotateArrow]='animation' src="../../../assets/images/shared/down-arrow.png"/>
+        </button>
+        
+    </div>
+</div>
+<timeline *ngIf="showTimeline" data-aos="fade-left" data-aos-duration="1500"></timeline>

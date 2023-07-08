@@ -1,0 +1,26 @@
+<div *ngIf="position === 'left'" class="container left" data-aos="fade-right" data-aos-duration="1500">
+    <div class="second-container">  
+        <img class="time-img" [src]="image"/> 
+        <div class="content">
+            <span class="vertical">
+                <h2>{{title}} <span class="year"> 
+                <br *ngIf="yearFromTo.length > 6"/>({{yearFromTo}})</span></h2>
+                <p>{{content}}</p>
+            </span> 
+        </div>
+    </div>  
+</div>
+
+<div *ngIf="position === 'right'" class="container right" data-aos="fade-left" data-aos-duration="1500">
+    <div class="second-container">
+        <img class="time-img" [src]="image"/>
+        <div class="content">
+            <span class="vertical">
+                <h2>{{title}} <span class="year"> 
+                <br *ngIf="yearFromTo.length > 6"/>({{yearFromTo}})</span></h2>
+                <p>{{content}}</p>
+            </span> 
+        </div> 
+     </div>
+</div>
+

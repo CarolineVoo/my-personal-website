@@ -1,0 +1,23 @@
+<div class="container">
+    <div data-aos="fade-zoom-in" data-aos-duration="2000">
+        <h2>The Evolution of Life</h2>
+        <p class="description"> This is my timeline of life evolution. Starting from when I was born until what I'm doing today.</p>
+
+        <div class="start-timeline"></div>
+
+        <div *ngFor="let item of timeLine" class="time-container">
+            <p class="timeline-text">{{item.year}}</p>
+            <timeline-box 
+                [position]="item.position" 
+                [image]="item.img" 
+                [title]="item.title"
+                [content]="item.content"
+                [yearFromTo]="item.yearFromTo">
+            </timeline-box>
+            <div *ngIf="!item.end" class="timeline"></div>
+        </div>
+
+        <div class="gradiant"></div>
+    </div>
+  
+</div>
