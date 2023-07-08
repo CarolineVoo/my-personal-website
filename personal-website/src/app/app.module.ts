@@ -12,8 +12,8 @@ import { AboutMeComponent } from './about-caroline/about-me/about-me.component';
 import { AboutCarolineComponent } from './about-caroline/about-caroline.component';
 import { TechSkillsComponent } from './about-caroline/tech-skills/tech-skills.component';
 import { WorkExperienceComponent } from './about-caroline/work-experience/work-experience.component';
-// import { FooterComponent } from './about-caroline/footer/footer.component';
-// import { ProjectsComponent } from './about-caroline/projects/projects.component';
+import { FooterComponent } from './about-caroline/footer/footer.component';
+import { ProjectsComponent } from './about-caroline/projects/projects.component';
 // import { MyProjectsComponent } from './my-projects/my-projects.component';
 // import { TicTacToeComponent } from './my-projects/tic-tac-toe/tic-tac-toe.component';
 
@@ -30,8 +30,8 @@ import { WorkExperienceComponent } from './about-caroline/work-experience/work-e
     AboutCarolineComponent,
     TechSkillsComponent,
     WorkExperienceComponent,
-    // FooterComponent,
-    // ProjectsComponent,
+    FooterComponent,
+    ProjectsComponent,
     // MyProjectsComponent,
     // TicTacToeComponent
   ],
