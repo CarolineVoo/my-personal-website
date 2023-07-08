@@ -1,0 +1,44 @@
+[
+    {
+        "title":"Capgemini Norway AS",
+        "description":"Today I'm working as Consultant. I'm in the Frontend Developer & Mobile Solutions department. Here I get to participate in various projects.",
+        "role": "Software Engineer",
+        "yearFromTo":"Sept. 2020 - D.D",
+        "image":"../../../assets/images/work-experience/capgemini.png"
+    },
+    {
+        "title":"Ignite Procurement",
+        "description":"I wrote my bachelor thesis and got a summer internship after my degree. Worked with React Native and created a mobile-app to the company.",
+        "role": "Summer internship",
+        "yearFromTo":"Jun. 2020 - Aug. 2020",
+        "image":"../../../assets/images/work-experience/ignite-procurement.png"
+    },
+    {
+        "title":"Oslo Metropolitan University",
+        "description":"Worked as student assistant for the subject Inclusive Web Design where this involved creating websites by coding in HTML, CSS and JavaScript. ",
+        "role": "Student assistant",
+        "yearFromTo":"Aug. 2019 - Dec. 2019",
+        "image":"../../../assets/images/work-experience/oslomet.png"
+    },
+    {
+        "title":"Sushi på Holtet",
+        "description":"Worked as waitress in a sushi restaurant. Here was mostly takeaway. I answered phones and delivered food to customers.",
+        "role": "Waitress",
+        "yearFromTo":"Sept. 2018 - Jul. 2019",
+        "image":"../../../assets/images/work-experience/sushi-pa-holtet.png"
+    },
+    {
+        "title":"Circle K Furuset",
+        "description":"Worked as cashier at a gas station. Handled payments and receipts, cleaned up and made some burgers and hotdogs to customers.",
+        "role": "Cashier",
+        "yearFromTo":"Sept. 2017 - Aug. 2018",
+        "image":"../../../assets/images/work-experience/circlek.png"
+    },
+    {
+        "title":"Efesos Restaurant Askim",
+        "description":"Worked as waitress at a turkish and norwegian restaurant. Served food to customers.",
+        "role": "Waitress",
+        "yearFromTo":"Sept. 2013 - Jul. 2017",
+        "image":"../../../assets/images/work-experience/efesos.png"
+    }
+]
