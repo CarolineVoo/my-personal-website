@@ -1,0 +1,58 @@
+<div class="container">
+    <h1> Tic Tac Toe</h1>
+
+    <div *ngIf="startPage" class="start-page">
+        <div class="star-page-background"></div>
+        <div class="choose-mode">
+            <button (click)="setMode('onePlayer')"> 1 player </button>
+            <button (click)="setMode('twoPlayers')"> 2 player </button>
+        </div>
+    </div>
+
+    <div *ngIf="!startPage" class="game">
+        <div class="wrapper">
+            <div *ngIf="!computerModeActive" class="information">
+                <p class="title">Player's turn:</p>
+                <div class="information-text">
+                    <span [class]="!playerTwosTurn ? 'playerOne icon-cross' : 'playerTwo icon-circle'"></span>
+                    <p class="players-turn-text">{{playersTurnTxt}}</p>
+                </div> 
+            </div>
+            <div class="board">
+                <div *ngFor="let item of ticTacToeBoard">
+                    <button 
+                        id="box-{{item.index}}" 
+                        class="row"
+                        [disabled]="item.selected || disableBoard"
+                        (click)="selectRow(item.index)">
+                        <span id="selected-row-{{item.index}}"></span>
+                    </button>
+                </div>
+                <span id="three-in-a-row-line"></span>
+            </div>
+            <div class="players">
+                <span class="player-box">
+                    <p class="player-text">Player 1:</p>
+                    <span class="playerOne icon-cross"></span>
+                </span>
+                <span class="player-box">
+                    <p class="player-text">{{computerModeActive ? 'Computer:' : 'Player 2:'}}</p>
+                    <span class="playerTwo icon-circle"></span>
+                </span>
+            </div>
+        </div>
+        <div *ngIf="gameOver" class="game-over">
+            <div *ngIf="newGame" class="game-over-content">
+                <p class="text">Game Over</p>
+                <p class="winner-text">{{winnerTxt}}</p>
+                <button (click)="restart()">Restart</button>
+                <button (click)="menu()">Menu</button>
+            </div>
+        </div>
+    </div>
+
+    <button *ngIf="startPage" class="go-back-button" routerLink="/my-projects" routerLinkActive="activebutton">
+        <img src="../../../assets/images/shared/left-arrow.png"/>
+    </button>
+</div>
+

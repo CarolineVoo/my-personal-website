@@ -14,8 +14,8 @@ import { TechSkillsComponent } from './about-caroline/tech-skills/tech-skills.co
 import { WorkExperienceComponent } from './about-caroline/work-experience/work-experience.component';
 import { FooterComponent } from './about-caroline/footer/footer.component';
 import { ProjectsComponent } from './about-caroline/projects/projects.component';
-// import { MyProjectsComponent } from './my-projects/my-projects.component';
-// import { TicTacToeComponent } from './my-projects/tic-tac-toe/tic-tac-toe.component';
+import { MyProjectsComponent } from './my-projects/my-projects.component';
+import { TicTacToeComponent } from './my-projects/tic-tac-toe/tic-tac-toe.component';
 
 
 @NgModule({
@@ -32,8 +32,8 @@ import { ProjectsComponent } from './about-caroline/projects/projects.component'
     WorkExperienceComponent,
     FooterComponent,
     ProjectsComponent,
-    // MyProjectsComponent,
-    // TicTacToeComponent
+    MyProjectsComponent,
+    TicTacToeComponent
   ],
   imports: [
     BrowserModule,
