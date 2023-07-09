@@ -7,8 +7,8 @@
       <p class="description"> I'm telling you about my hobby and what I like to do during the free time. </p>
   
       <div class="content-container" *ngIf="show" data-aos="fade-zoom-in" data-aos-duration="1500">
-        <img id="corner-top" src="../../../assets/images/shared/small-corner.png"> 
-        <img id="corner-bottom" src="../../../assets/images/shared/small-corner.png"> 
+        <img id="corner-top" src="assets/images/shared/small-corner.png"> 
+        <img id="corner-bottom" src="assets/images/shared/small-corner.png"> 
       <div class="content">
           <span class="vertical">
               <h2>{{hobbySections[level].title}}</h2>
@@ -23,14 +23,14 @@
   
       <div class="bottom-dots">
         <button class="nextPrev" (click)="Previous()">
-          <img class="arrow" src="../../../assets/images/shared/left-arrow.png"/>
+          <img class="arrow" src="assets/images/shared/left-arrow.png"/>
         </button>
         <span (click)="setLevel(0)" #one class="dots"></span>
         <span (click)="setLevel(1)" #two class="dots"></span>
         <span (click)="setLevel(2)" #three class="dots"></span>
         <span (click)="setLevel(3)" #four class="dots"></span>
         <button class="nextPrev" (click)="Next()">
-          <img class="arrow" src="../../../assets/images/shared/right-arrow.png"/>
+          <img class="arrow" src="assets/images/shared/right-arrow.png"/>
         </button>
       </div>
       

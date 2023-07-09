@@ -9,7 +9,7 @@
             "noLevel": []
         }
       ],
-      "img": "../../../assets/images/technology/angular.png",
+      "img": "assets/images/technology/angular.png",
       "url": "https://angular.io/docs"
     },
     {
@@ -22,7 +22,7 @@
             "noLevel": []
         }
       ],
-      "img": "../../../assets/images/technology/react.png",
+      "img": "assets/images/technology/react.png",
       "url": "https://reactjs.org/"
     },
     {
@@ -35,7 +35,7 @@
             "noLevel": []
         }
       ],
-      "img": "../../../assets/images/technology/react-native.png",
+      "img": "assets/images/technology/react-native.png",
       "url": "https://reactnative.dev/"
     },
     {
@@ -48,7 +48,7 @@
             "noLevel": []
         }
       ],
-      "img": "../../../assets/images/technology/javascript.png",
+      "img": "assets/images/technology/javascript.png",
       "url": "https://www.javascript.com/"
     },
     {
@@ -61,7 +61,7 @@
             "noLevel": []
         }
       ],
-      "img": "../../../assets/images/technology/typescript.png",
+      "img": "assets/images/technology/typescript.png",
       "url": "https://www.typescriptlang.org/"
     },
     {
@@ -74,7 +74,7 @@
             "noLevel": []
         }
       ],
-      "img": "../../../assets/images/technology/html.png",
+      "img": "assets/images/technology/html.png",
       "url": "https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics"
     },
     {
@@ -87,7 +87,7 @@
             "noLevel": []
         }
       ],
-      "img": "../../../assets/images/technology/css.png",
+      "img": "assets/images/technology/css.png",
       "url": "https://developer.mozilla.org/en-US/docs/Web/CSS"
     },
     {
@@ -100,7 +100,7 @@
             "noLevel": []
         }
       ],
-      "img": "../../../assets/images/technology/netcore.png",
+      "img": "assets/images/technology/netcore.png",
       "url": "https://dotnet.microsoft.com/"
     }
   ]
