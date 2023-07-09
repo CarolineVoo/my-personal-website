@@ -4,7 +4,7 @@
         "title": "My birth",
         "content": "I was born in Norway, October 21th 1998. My family is from Vietnam and later moved to Norway in the 1970s. So I grew up in a small town called Askim.",
         "yearFromTo": "1998",
-        "img": "../../../../../assets/images/about-me/baby-1998.png",
+        "img": "assets/images/about-me/baby-1998.png",
         "position": "left",
         "end": false
     },
@@ -13,7 +13,7 @@
         "title": "Korsgård skole",
         "content": "Korsgård school was my first primary school that I only went to for 1 year. I met nice people before I moved and left school.",
         "yearFromTo": "2004 - 2005",
-        "img": "../../../../../assets/images/about-me/korsegard-2004.png",
+        "img": "assets/images/about-me/korsegard-2004.png",
         "position": "right",
         "end": false
     },
@@ -22,7 +22,7 @@
         "title": "Eid skole",
         "content": "After 1st grade, I moved and changed primary school to Eid school. We moved to live closer to the school. Here I went 2nd grade to 7th grade.",
         "yearFromTo": "2005 - 2011",
-        "img": "../../../../../assets/images/about-me/eid-2005.png",
+        "img": "assets/images/about-me/eid-2005.png",
         "position": "left",
         "end": false
     },
@@ -31,7 +31,7 @@
         "title": "Grøtvedt ungdomsskole",
         "content": "When primary school was finished, it was middle school. Here I got new classmates, but still kept the same friends. We went here for 2 years before we had to move to another location.",
         "yearFromTo": "2011 - 2013",
-        "img": "../../../../../assets/images/about-me/grotvedt-2011.png",
+        "img": "assets/images/about-me/grotvedt-2011.png",
         "position": "right",
         "end": false
     },
@@ -40,7 +40,7 @@
         "title": "Askim ungdomsskole",
         "content": "In 10th grade, many schools merged into one large middle school. This was a brand new school where I went only 1 year.",
         "yearFromTo": "2013 - 2014",
-        "img": "../../../../../assets/images/about-me/askim-u-2013.png",
+        "img": "assets/images/about-me/askim-u-2013.png",
         "position": "left",
         "end": false
     },
@@ -49,7 +49,7 @@
         "title": "Askim videregående skole",
         "content": "In high school, we had to think more about what we want to be in the future. In Norway we also have 13th grade which is the last grade. When I have reached the last grade in high school, I got to celebrate something called the 'Russetiden'.",
         "yearFromTo": "2014 - 2017",
-        "img": "../../../../../assets/images/about-me/highschool-2014.png",
+        "img": "assets/images/about-me/highschool-2014.png",
         "position": "right",
         "end": false
     },
@@ -58,7 +58,7 @@
         "title": "Oslo Metropolitian University",
         "content": "Time flew, and I had decided to move from Askim to Oslo to study Bachelor of Information Technology. I found out that I was interested in programming, so I applied to different universities in Oslo.",
         "yearFromTo": "2017 - 2020",
-        "img": "../../../../../assets/images/about-me/oslomet-2017.png",
+        "img": "assets/images/about-me/oslomet-2017.png",
         "position": "left",
         "end": false
     },
@@ -67,7 +67,7 @@
         "title": "Capgemini Norway",
         "content": "After my bachelor's degree, I decided to apply for a job in programming. I finally got the job at Capgemini Norway in Oslo where my position is as a Software Engineer Consultant.",
         "yearFromTo": "2020",
-        "img": "../../../../../assets/images/about-me/capgemini-2020.png",
+        "img": "assets/images/about-me/capgemini-2020.png",
         "position": "right",
         "end": true
     }

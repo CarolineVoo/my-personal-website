@@ -3,24 +3,24 @@
         "type": "taekwondo",
         "title": "Taekwondo",
         "content": "When I was 11 years old, I started Taekwondo. Someone in my family also did taekwondo as well in the past. My goal was therefore to beat them and get a black belt. The best thing about taekwondo was the competitions and the fights. After 7 years, I did not have much time due to focus on school and work. So I have always wondered if I should do a comeback one day?",
-        "img": "../../../assets/images/hobby/taekwondo.gif"
+        "img": "assets/images/hobby/taekwondo.gif"
     },
     {
         "type": "workout",
         "title": "Workout",
         "content": "I am a person who likes to be physically active. I started exercising properly at the gym when I was around 16 years old. I am a motivated person who always sticks to a training routine. I often did strength training and took small intervals at the gym. Until covid-19 came, the gym closed and I started running outside instead. I’m still fighting!",
-        "img": "../../../assets/images/hobby/workout.gif"
+        "img": "assets/images/hobby/workout.gif"
     },
     {
         "type": "gaming",
         "title": "Gaming",
         "content": "Since I was little I have always enjoyed gaming. That was the time I very often played games with my family. Nintendo 64, GameCube and Gameboy Advance SP. Right now, I still play a little, but not as much as before. I am gaming on the computer and Playstation 5. Games like GTA5, League of Legends and other exciting story games.",
-        "img": "../../../assets/images/hobby/gaming.gif"
+        "img": "assets/images/hobby/gaming.gif"
     },
     {
         "type": "programming",
         "title": "Programming",
         "content": "In high school, I figured it out that I wanted to be a developer. I chose to study Information Technology to learn more about coding and computers. The more I learned coding the more I enjoyed it. So it has become a small hobby for me, where I make small projects in my spare time. Creating stuff like websites and simple games.",
-        "img": "../../../assets/images/hobby/programming.gif"
+        "img": "assets/images/hobby/programming.gif"
     }
   ]
