@@ -152,5 +152,17 @@ p {
 }
 
 @media only screen and (max-width: 425px) { 
+    .container {
+        height: auto;
+    }
 
+    .content {
+        height: auto;
+    }
+
+    .bottom-dots {
+        position: unset;
+        margin: 0 auto;
+        padding: 25px 0;
+    }
 }
