@@ -536,8 +536,38 @@ h1 {
     }
   }
 
+  @media only screen and (max-width: 800px) {   
+    .information .title  {
+      font-size: 18px;
+    }
+
+    .players-turn-text {
+      font-size: 18px !important;
+      margin-top: 5px;
+    }
+  }
+
+  @media only screen and (max-width: 750px) {   
+    .information  {
+      top: 15px;
+    }
+
+    .information .title  {
+      font-size: 18px;
+    }
+
+    .players-turn-text {
+      font-size: 18px !important;
+      margin-top: 5px;
+    }
+  }
+
 
   @media only screen and (max-width: 600px) {   
+
+    h1 {
+      font-size: 30px;
+    }
     .row {
       width: 140px;
       height: 140px;
@@ -547,6 +577,268 @@ h1 {
       margin-left: 5%;
     }
 
+    .line-0,
+    .line-1,
+    .line-2 {
+      width: 420px;
+      animation-name: horizontal-small;
+    }
+
+    .line-2 {
+      bottom: 65px;
+    }
+
+    .line-3,
+    .line-4,
+    .line-5 {
+      height: 420px;
+      animation-name: vertical-small;
+    }
+
+    .line-3 {
+      left: 67px;
+    }
+
+    .line-4 {
+      left: 205px;
+    }
+
+    .line-5 {
+      right: -355px;
+    }
+
+    .line-6 {
+      top: -80px;
+      left: 200px;
+      height: 570px;
+      animation-name: cross-left-small;
+    }
+
+    .line-7 {
+      top: -85px;
+      right: -220px;
+      height: 572px;
+      animation-name: cross-right-small;
+    }
+
+    @keyframes horizontal-small {
+      0% {
+        width: 0;
+      }
+      100% {
+        width: 420px;
+      }
+    }
+
+    @keyframes vertical-small {
+      0% {
+        height: 0;
+      }
+      100% {
+        height: 420px;
+      }
+    }
+
+    @keyframes cross-left-small {
+      0% {
+        top: 5px;
+        left: 0px;
+        height: 0px;
+      }
+      100% {
+        top: -80px;
+        left: 200px;
+        height: 570px;
+      }
+    }
+
+    @keyframes cross-right-small {
+      0% {
+        top: 0px;
+        right: -425px;
+        height: 0px;
+      }
+      100% {
+        top: -85px;
+        right: -220px;
+        height: 575px;
+      }
+    }
+
+  }
+
+  @media only screen and (max-width: 460px) {  
+
+    h1{
+      font-size: 32px;
+    }
+
+    .game {
+      display: flex;
+      justify-content: center;
+      margin-top: 25px;
+    }
+
+    .row {
+      width: 100px;
+      height: 100px;
+    }
+
+    .wrapper {
+      width: auto;
+    }
+
+    .board {
+      margin: 100px auto 0 auto;
+      width: 300px;
+    }
+
+    .player-box {
+      margin: 0 10px;
+    }
+
+    .player-text {
+      font-size: 16px;
+    }
+
+    .playerOne {
+      width: 90px;
+      height: 5px;
+    }
+  
+    .playerOne:after {
+        width: 90px;
+        height: 5px;
+    }
+
+    .playerTwo {
+      display: block;
+      width: 60px;
+      height: 60px;
+      border-radius: 100px;
+    }
+
+    .winner-text {
+      font-size: 40px;
+    }
+
+    .game-over button {
+      font-size: 20px;
+    }
+
+    .choose-mode button {
+      padding: 15px 35px;
+    }
+
+    .information  {
+      top: 85px;
+    }
+
+    .information  {
+      top: 130px;
+    }
+
+    .information .title  {
+      font-size: 15px;
+    }
+
+    .players-turn-text {
+      font-size: 20px !important;
+      margin-top: 5px;
+      margin-left: 2px;
+    }
+
+    .line-0,
+    .line-1,
+    .line-2 {
+      width: 300px;
+      animation-name: horizontal-xsmall;
+    }
+
+    .line-0 {
+      top: 47px;
+    }
+
+    .line-2 {
+      bottom: 45px;
+    }
+
+    .line-3,
+    .line-4,
+    .line-5 {
+      height: 300px;
+      animation-name: vertical-xsmall;
+    }
+
+    .line-3 {
+      left: 47px;
+    }
+
+    .line-4 {
+      left: 0px;
+    }
+
+    .line-5 {
+      right: 46px;
+    }
+
+    .line-6 {
+      top: -50px;
+      left: 148px;
+      height: 400px;
+      animation-name: cross-left-xsmall;
+    }
+
+    .line-7 {
+      top: -50px;
+      right: 147px;
+      height: 400px;
+      animation-name: cross-right-xsmall;
+    }
+
+    @keyframes horizontal-xsmall {
+      0% {
+        width: 0;
+      }
+      100% {
+        width: 300px;
+      }
+    }
+
+    @keyframes vertical-xsmall {
+      0% {
+        height: 0;
+      }
+      100% {
+        height: 300px;
+      }
+    }
+
+    @keyframes cross-left-xsmall {
+      0% {
+        top: 10px;
+        left: 6px;
+        height: 0px;
+      }
+      100% {
+        top: -50px;
+        left: 148px;
+        height: 400px;
+      }
+    }
+
+    @keyframes cross-right-xsmall {
+      0% {
+        top: 10px;
+        right: 10px;
+        height: 0px;
+      }
+      100% {
+        top: -50px;
+        right: 147px;
+        height: 400px;
+      }
+    }
   }
 
 

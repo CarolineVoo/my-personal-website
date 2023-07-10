@@ -2,7 +2,7 @@
     <h1>My work experiences</h1>
     <div class="content" data-aos="fade-zoom-in" data-aos-duration="1500" data-aos-offset="400">
         <div *ngFor="let workExperience of workExperiences; let i = index">
-            <div *ngIf="i >= first && i < end" class="box" data-aos="fade-zoom-in" data-aos-duration="1500">
+            <div *ngIf="i >= first && i < end" class="box">
                 <div class="logo">
                     <img [src]="workExperience.image"/>
                 </div>
