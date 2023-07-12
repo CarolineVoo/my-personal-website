@@ -6,9 +6,11 @@
     color: #fff;
     box-sizing: border-box;
     overflow: hidden;
+    position: relative;
 }
 
 h1 {
+    position: absolute;
     margin-top: 30px;
     text-align: center;
     font-weight: 400;
@@ -18,6 +20,8 @@ h1 {
     0 0 5px #fff,
     0 0 15px #8affa4,
     0 0 15px #8affa4;
+    left: 0;
+    right: 0;
 }
 
 .start-page {
@@ -25,8 +29,8 @@ h1 {
     position: relative;
 }   
     
-.star-page-background {
-    top: 100px;
+.start-page-background {
+    top: 0;
     bottom: 0;
     position: absolute;
     display: block;
@@ -39,13 +43,14 @@ h1 {
     height: 60vh;
     width: 100%;
     transform: scale(1.1);
+    height: 100vh;
 }
 
 .choose-mode {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 70vh;
+    height: 90vh;
     background-repeat: no-repeat;
 }
 
@@ -102,7 +107,7 @@ h1 {
 
 .wrapper {
     width: 470px;
-    margin: 50px auto 0 auto;
+    /* margin: 50px auto 0 auto; */
 }
 
 .information {
@@ -145,6 +150,13 @@ h1 {
     width: 25px !important;
     height: 25px !important;
     border: 1px solid #ff76ff !important;
+}
+
+.game {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .board{
@@ -549,7 +561,7 @@ h1 {
 
   @media only screen and (max-width: 750px) {   
     .information  {
-      top: 15px;
+      top: 120px;
     }
 
     .information .title  {
@@ -689,7 +701,7 @@ h1 {
     }
 
     .board {
-      margin: 100px auto 0 auto;
+      margin: 0;
       width: 300px;
     }
 
