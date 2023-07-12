@@ -13,7 +13,7 @@
         <div class="section-projects">
             <div *ngFor="let project of projects">
                 <button class="box" [routerLink]="project.url" routerLinkActive="activebutton" [disabled]="project.status.disabled">
-                    <div class="image">
+                    <div class="image {{project.status.disabled ? 'image-disabled' : ''}}">
                         <img [src]="project.image"/>
                     </div>
                     <div class="content">
