@@ -75,6 +75,10 @@ p {
     transform: scale(1.02);
 }
 
+.box:disabled {
+    transform: scale(1);
+}
+
 .image {
     width: 275px;
     height: 150px;
@@ -105,4 +109,28 @@ h3 {
 .content p {
     text-align: left;
     width: 100%;
+}
+
+.banner{
+    position: absolute;
+    width: 140%;
+    box-shadow: 2px 3px 5px #969696;
+    top: 40%;
+    left: -40px;
+    transform: rotate(30deg);
+}
+
+.banner--red {
+    background-color: rgb(204, 56, 56);
+}
+
+.banner--grey {
+    background-color: rgb(158, 158, 158);
+}
+
+.banner p {
+    color: #fff;
+    padding: 10px;
+    font-weight: 500;
+    letter-spacing: 2px;
 }
