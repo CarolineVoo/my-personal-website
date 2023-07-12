@@ -4,13 +4,35 @@
         "category": "Stategic",
         "description": "Try to get three in a row. This can be a game for 2 players or a game against computers.",
         "url": "tic-tac-toe",
-        "image": "assets/images/my-projects/tic-tac-toe.png"
+        "image": "assets/images/my-projects/tic-tac-toe.png",
+        "status": {
+            "disabled": false,
+            "text": null,
+            "color": null
+        }
+    },
+    {
+        "title": "Snake",
+        "category": "Retro",
+        "description": "Let's go back to the 90s and play snake! Play the classic mobile Snake game in a Nokia Simulator",
+        "url": "nokia-snake",
+        "image": "assets/images/my-projects/snake.png",
+        "status": {
+            "disabled": true,
+            "text": "Work in progress..",
+            "color": "grey"
+        }
     },
     {
         "title": "Rock paper scissors",
         "category": "Simultaneous",
         "description": "Rock paper scissors! Compete against computer and hope that you are lucky to win. ",
         "url": "rock-paper-scissors",
-        "image": "assets/images/my-projects/rock-paper-scissors.png"
+        "image": "assets/images/my-projects/rock-paper-scissors.png",
+        "status": {
+            "disabled": true,
+            "text": "Coming soon..",
+            "color": "red"
+        }
     }
 ]
