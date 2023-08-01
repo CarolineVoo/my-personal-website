@@ -1,0 +1,9 @@
+<div class="container">
+    <div class="wrapper">
+        <div class="board">
+            <div *ngFor="let pixel of pixelBoard">
+                <span [ngClass]="pixel.active ? 'pixel active' : pixel.corner ? 'pixel corner' : 'pixel'"> </span>
+            </div>
+        </div>
+    </div>
+</div>

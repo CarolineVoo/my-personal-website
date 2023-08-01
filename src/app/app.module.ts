@@ -16,6 +16,7 @@ import { FooterComponent } from './about-caroline/footer/footer.component';
 import { ProjectsComponent } from './about-caroline/projects/projects.component';
 import { MyProjectsComponent } from './my-projects/my-projects.component';
 import { TicTacToeComponent } from './my-projects/tic-tac-toe/tic-tac-toe.component';
+import { SnakeComponent } from './my-projects/snake/snake.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { TicTacToeComponent } from './my-projects/tic-tac-toe/tic-tac-toe.compon
     FooterComponent,
     ProjectsComponent,
     MyProjectsComponent,
-    TicTacToeComponent
+    TicTacToeComponent,
+    SnakeComponent
   ],
   imports: [
     BrowserModule,
