@@ -10,6 +10,7 @@ export class SnakeComponent implements OnInit{
   public pixelBoard: Array<BoardModel>;
   public snake: Array<number>;
   private initMove: any;
+  private moveInterval: any;
 
   ngOnInit(): void {
     this.pixelBoard = new Array();
@@ -24,33 +25,71 @@ export class SnakeComponent implements OnInit{
   @HostListener('window:keyup', ['$event'])
   keyEvent(event: KeyboardEvent) {
     console.log(event);
-    this.keyEventMove();
+    this.keyEventMove(event.key);
   }
 
   //Game Start - Snake position in middle 
   startGame(): void {
-    const startPosition = 500;
+    let startPosition = 500;
     const activeBoard = this.pixelBoard.find(s => s.index == startPosition);
     this.snake.push(startPosition);
     activeBoard.active = true;
 
     this.initMove = setInterval(() => {
-      console.log('Init');
-    }, 2000);
+      startPosition = startPosition + 40;
+      this.snake.push(startPosition);
+      this.setActiveIndexBoard(this.snake);
+    }, 1000);
   }
 
   //Keyboard Event Move
-  keyEventMove(): void {
-    clearInterval(this.initMove);
-    this.clearActivePixels();
-    setInterval(() => {
-      console.log('Move');
-    }, 2000);
-  }
+  keyEventMove(keyEvent: string): void {
+    this.clearIntervals();
+    let step;
 
-  //Keyboard Event Move
-  setActiveIndexBoard(actives: Array<number>): void {
+    switch(keyEvent) {
+      case 'ArrowDown':
+        step = 40;
+        break;
+      case 'ArrowUp':
+        step = -40;
+        break;
+      case 'ArrowRight':
+        step = 1;
+        break;
+      case 'ArrowLeft':
+        step = -1;
+        break;
+    }
   
+    this.moveInterval = setInterval(() => {
+      let tempSnake = [];
+
+      for(let i = 0; i < this.snake.length; i++){
+        const position = this.snake[i] + step;
+        tempSnake.push(position);
+      }
+      this.setActiveIndexBoard(tempSnake);
+      this.snake = tempSnake;
+    }, 1000);
+  }
+
+  //Keyboard Event Move
+  setActiveIndexBoard(snake: Array<number>): void {
+    this.clearActivePixels();
+
+    snake.forEach(x => {
+      const index = x - 1;
+      this.pixelBoard[index].active = true;
+
+      //Hits the corner
+      if(this.pixelBoard[index].corner) {
+        this.clearIntervals();
+        this.pixelBoard[index].active = false;
+        console.log('GAME OVER');
+        return;
+      }
+    });
   }
 
   //Generates the board
@@ -71,7 +110,6 @@ export class SnakeComponent implements OnInit{
           pixelBoard.corner = true;
         }
       }
-
       this.pixelBoard.push(pixelBoard);
     }
   }
@@ -81,6 +119,12 @@ export class SnakeComponent implements OnInit{
     for(var i = 0; i < 1000; i++) {
       this.pixelBoard[i].active = false;
     }
+  }
+
+  //Clears all intervals
+  clearIntervals(): void {
+    clearInterval(this.initMove);
+    clearInterval(this.moveInterval);
   }
 
 }
