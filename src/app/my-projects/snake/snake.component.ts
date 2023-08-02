@@ -29,7 +29,7 @@ export class SnakeComponent implements OnInit{
 
   //Game Start - Snake position in middle 
   startGame(): void {
-    this.snake = [500];
+    this.snake = [500, 540, 580, 620, 660];
     this.keyEventMove('ArrowDown')
   }
 
@@ -55,16 +55,9 @@ export class SnakeComponent implements OnInit{
   
     this.moveInterval = setInterval(() => {
       let tempSnake = [];
-
-      // for(let i = 0; i < this.snake.length; i++){
-      //   const position = this.snake[i] + step;
-      //   tempSnake.push(position);
-      // }
-      // this.setActiveIndexBoard(tempSnake);
-      // this.snake = tempSnake;
-
       let lastPosition = this.snake.length - 1;
       let head = this.snake[0] + step;
+
       tempSnake.push(head);
       
       this.snake.forEach((position, index) => {
@@ -76,7 +69,7 @@ export class SnakeComponent implements OnInit{
 
       this.setActiveIndexBoard(tempSnake);
       this.snake = tempSnake;
-    }, 1000);
+    }, 500);
   }
 
   //Keyboard Event Move
