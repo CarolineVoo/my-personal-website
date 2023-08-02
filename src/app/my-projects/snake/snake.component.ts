@@ -9,7 +9,6 @@ import { BoardModel } from './models/board.model';
 export class SnakeComponent implements OnInit{
   public pixelBoard: Array<BoardModel>;
   public snake: Array<number>;
-  private initMove: any;
   private moveInterval: any;
 
   ngOnInit(): void {
@@ -30,16 +29,8 @@ export class SnakeComponent implements OnInit{
 
   //Game Start - Snake position in middle 
   startGame(): void {
-    let startPosition = 500;
-    const activeBoard = this.pixelBoard.find(s => s.index == startPosition);
-    this.snake.push(startPosition);
-    activeBoard.active = true;
-
-    this.initMove = setInterval(() => {
-      startPosition = startPosition + 40;
-      this.snake.push(startPosition);
-      this.setActiveIndexBoard(this.snake);
-    }, 1000);
+    this.snake = [500];
+    this.keyEventMove('ArrowDown')
   }
 
   //Keyboard Event Move
@@ -65,10 +56,24 @@ export class SnakeComponent implements OnInit{
     this.moveInterval = setInterval(() => {
       let tempSnake = [];
 
-      for(let i = 0; i < this.snake.length; i++){
-        const position = this.snake[i] + step;
-        tempSnake.push(position);
-      }
+      // for(let i = 0; i < this.snake.length; i++){
+      //   const position = this.snake[i] + step;
+      //   tempSnake.push(position);
+      // }
+      // this.setActiveIndexBoard(tempSnake);
+      // this.snake = tempSnake;
+
+      let lastPosition = this.snake.length - 1;
+      let head = this.snake[0] + step;
+      tempSnake.push(head);
+      
+      this.snake.forEach((position, index) => {
+        if(index != lastPosition) {
+          tempSnake.push(position);
+        }
+      });
+      console.log(tempSnake);
+
       this.setActiveIndexBoard(tempSnake);
       this.snake = tempSnake;
     }, 1000);
@@ -98,12 +103,10 @@ export class SnakeComponent implements OnInit{
       let pixelBoard = {
         index: i, active: false, corner: false
       }
-
       //Horizontal corners
       if(i <= 40 || i > 960) { 
         pixelBoard.corner = true;
       }
-
       //Vertical corners
       for(var j = 1; j < 25; j++) {
         if(((40 * j) + 1) == i || (40 * j) == i) { 
@@ -123,7 +126,6 @@ export class SnakeComponent implements OnInit{
 
   //Clears all intervals
   clearIntervals(): void {
-    clearInterval(this.initMove);
     clearInterval(this.moveInterval);
   }
 
