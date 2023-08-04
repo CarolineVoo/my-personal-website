@@ -2,7 +2,7 @@
     <div class="wrapper">
         <div class="board">
             <div *ngFor="let pixel of pixelBoard">
-                <span [ngClass]="pixel.active ? 'pixel active' : pixel.corner ? 'pixel corner' : 'pixel'"> </span>
+                <span [ngClass]="pixel.active ? 'pixel active' : pixel.corner ? 'pixel corner' : pixel.ball ? 'pixel ball' : 'pixel'"></span>
             </div>
         </div>
     </div>

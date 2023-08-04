@@ -10,6 +10,7 @@ export class SnakeComponent implements OnInit{
   public pixelBoard: Array<BoardModel>;
   public snake: Array<number>;
   private moveInterval: any;
+  private lastKey: string;
 
   ngOnInit(): void {
     this.pixelBoard = new Array();
@@ -29,47 +30,65 @@ export class SnakeComponent implements OnInit{
 
   //Game Start - Snake position in middle 
   startGame(): void {
-    this.snake = [500, 540, 580, 620, 660];
-    this.keyEventMove('ArrowDown')
+    this.snake = [500, 540, 580];
+    this.keyEventMove('ArrowDown');
+    this.setBall();
   }
 
   //Keyboard Event Move
   keyEventMove(keyEvent: string): void {
-    this.clearIntervals();
-    let step;
+    if(keyEvent == 'ArrowDown' || keyEvent == 'ArrowUp' ||
+      keyEvent == 'ArrowRight' || keyEvent == 'ArrowLeft') {
 
-    switch(keyEvent) {
-      case 'ArrowDown':
-        step = 40;
-        break;
-      case 'ArrowUp':
-        step = -40;
-        break;
-      case 'ArrowRight':
-        step = 1;
-        break;
-      case 'ArrowLeft':
-        step = -1;
-        break;
-    }
-  
-    this.moveInterval = setInterval(() => {
-      let tempSnake = [];
-      let lastPosition = this.snake.length - 1;
-      let head = this.snake[0] + step;
-
-      tempSnake.push(head);
-      
-      this.snake.forEach((position, index) => {
-        if(index != lastPosition) {
-          tempSnake.push(position);
+        //Validate key event
+        if(keyEvent == this.lastKey) {
+          return;
         }
-      });
-      console.log(tempSnake);
 
-      this.setActiveIndexBoard(tempSnake);
-      this.snake = tempSnake;
-    }, 500);
+        this.clearIntervals();
+        let step;
+
+        switch(keyEvent) {
+          case 'ArrowDown':
+            step = 40;
+            break;
+          case 'ArrowUp':
+            step = -40;
+            break;
+          case 'ArrowRight':
+            step = 1;
+            break;
+          case 'ArrowLeft':
+            step = -1;
+            break;
+        }
+
+        this.lastKey = keyEvent;
+      
+        this.moveInterval = setInterval(() => {
+          let tempSnake = [];
+          let lastPosition = this.snake.length - 1;
+          let head = this.snake[0] + step;
+
+          tempSnake.push(head);
+          
+          this.snake.forEach((position, index) => {
+            if(index != lastPosition) {
+              tempSnake.push(position);
+            }
+          });
+
+          if(this.snakeHittedBall(head)) {
+            tempSnake.push(this.snake[lastPosition]);
+            this.setBall();
+          }
+
+          this.setActiveIndexBoard(tempSnake);
+          this.snake = tempSnake;
+        }, 200);
+
+    
+    }
   }
 
   //Keyboard Event Move
@@ -78,23 +97,53 @@ export class SnakeComponent implements OnInit{
 
     snake.forEach(x => {
       const index = x - 1;
-      this.pixelBoard[index].active = true;
 
-      //Hits the corner
+      //Game over
       if(this.pixelBoard[index].corner) {
         this.clearIntervals();
-        this.pixelBoard[index].active = false;
         console.log('GAME OVER');
-        return;
+        // return;
       }
+
+      this.pixelBoard[index].active = true;
+    
     });
+  }
+
+  //Clears all intervals
+  setBall(): void {
+    this.pixelBoard.forEach(x => {
+      x.ball = false;
+    });
+
+    let ballIndex = Math.floor(Math.random() * 1000);
+    const board = this.pixelBoard[ballIndex];
+
+    if(board.corner || board.active) {
+      this.setBall();
+      return;
+    }
+
+    board.ball = true;
+
+    this.pixelBoard[ballIndex] = board;
+  }
+
+  //Check if snake hits the ball 
+  snakeHittedBall(head: number): boolean {
+    let isBall = false;
+    const pixel = this.pixelBoard.find(x => x.index == head);
+    if(pixel.ball) {
+      isBall = true;
+    }
+    return isBall;
   }
 
   //Generates the board
   generateBoardPixels(): void {
     for(var i = 1; i <= 1000; i++) {
       let pixelBoard = {
-        index: i, active: false, corner: false
+        index: i, active: false, corner: false, ball: false
       }
       //Horizontal corners
       if(i <= 40 || i > 960) { 
