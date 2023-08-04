@@ -16,15 +16,12 @@ export class SnakeComponent implements OnInit{
     this.pixelBoard = new Array();
     this.snake = new Array();
     this.generateBoardPixels();
-
     this.startGame();
-    console.log(this.pixelBoard)
   }
 
   //Keyboard Event
   @HostListener('window:keyup', ['$event'])
   keyEvent(event: KeyboardEvent) {
-    console.log(event);
     this.keyEventMove(event.key);
   }
 
@@ -41,31 +38,33 @@ export class SnakeComponent implements OnInit{
       keyEvent == 'ArrowRight' || keyEvent == 'ArrowLeft') {
 
         //Validate key event
-        if(keyEvent == this.lastKey) {
+        if(this.isKeyEventNotValid(keyEvent,this.lastKey)) {
           return;
         }
 
         this.clearIntervals();
-        let step;
 
-        switch(keyEvent) {
-          case 'ArrowDown':
-            step = 40;
-            break;
-          case 'ArrowUp':
-            step = -40;
-            break;
-          case 'ArrowRight':
-            step = 1;
-            break;
-          case 'ArrowLeft':
-            step = -1;
-            break;
-        }
-
-        this.lastKey = keyEvent;
       
         this.moveInterval = setInterval(() => {
+          let step;
+
+          switch(keyEvent) {
+            case 'ArrowDown':
+              step = 40;
+              break;
+            case 'ArrowUp':
+              step = -40;
+              break;
+            case 'ArrowRight':
+              step = 1;
+              break;
+            case 'ArrowLeft':
+              step = -1;
+              break;
+          }
+  
+          this.lastKey = keyEvent;
+          
           let tempSnake = [];
           let lastPosition = this.snake.length - 1;
           let head = this.snake[0] + step;
@@ -78,14 +77,21 @@ export class SnakeComponent implements OnInit{
             }
           });
 
-          if(this.snakeHittedBall(head)) {
+          if(this.snakeHitBall(head)) {
             tempSnake.push(this.snake[lastPosition]);
             this.setBall();
           }
 
+          if(this.snakeHitCornerOrItself(head)) {
+            console.log('Game Over');
+            this.clearIntervals();
+            return;
+          }
+
           this.setActiveIndexBoard(tempSnake);
+
           this.snake = tempSnake;
-        }, 200);
+        }, 150);
 
     
     }
@@ -94,19 +100,9 @@ export class SnakeComponent implements OnInit{
   //Keyboard Event Move
   setActiveIndexBoard(snake: Array<number>): void {
     this.clearActivePixels();
-
     snake.forEach(x => {
       const index = x - 1;
-
-      //Game over
-      if(this.pixelBoard[index].corner) {
-        this.clearIntervals();
-        console.log('GAME OVER');
-        // return;
-      }
-
       this.pixelBoard[index].active = true;
-    
     });
   }
 
@@ -130,13 +126,23 @@ export class SnakeComponent implements OnInit{
   }
 
   //Check if snake hits the ball 
-  snakeHittedBall(head: number): boolean {
+  snakeHitBall(head: number): boolean {
     let isBall = false;
     const pixel = this.pixelBoard.find(x => x.index == head);
     if(pixel.ball) {
       isBall = true;
     }
     return isBall;
+  }
+
+  //Check if snake hits the corner
+  snakeHitCornerOrItself(head: number): boolean {
+    let isHit = false;
+    const pixel = this.pixelBoard.find(x => x.index == head);
+    if(pixel.corner || pixel.active) {
+      isHit = true;
+    }
+    return isHit;
   }
 
   //Generates the board
@@ -169,6 +175,33 @@ export class SnakeComponent implements OnInit{
   //Clears all intervals
   clearIntervals(): void {
     clearInterval(this.moveInterval);
+  }
+
+  //Validates the key event
+  isKeyEventNotValid(keyEvent: string, lastKey: string): boolean {
+    let isNotValid = false;
+
+    if(keyEvent == lastKey) {
+      isNotValid = true;
+    }
+
+    if(keyEvent == 'ArrowDown' && lastKey == 'ArrowUp') {
+      isNotValid = true;
+    }
+
+    if(keyEvent == 'ArrowUp' && lastKey == 'ArrowDown') {
+      isNotValid = true;
+    }
+
+    if(keyEvent == 'ArrowRight' && lastKey == 'ArrowLeft') {
+      isNotValid = true;
+    }
+
+    if(keyEvent == 'ArrowLeft' && lastKey == 'ArrowRight') {
+      isNotValid = true;
+    }
+
+    return isNotValid;
   }
 
 }

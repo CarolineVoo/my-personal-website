@@ -15,10 +15,10 @@
         "title": "Snake",
         "category": "Retro",
         "description": "Let's go back to the 90s and play snake! Play the classic mobile Snake game in a Nokia Simulator",
-        "url": "nokia-snake",
+        "url": "snake",
         "image": "assets/images/my-projects/snake.png",
         "status": {
-            "disabled": true,
+            "disabled": false,
             "text": "Work in progress..",
             "color": "grey"
         }
