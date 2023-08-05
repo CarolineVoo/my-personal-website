@@ -4,7 +4,12 @@
         <div class="screen">
             <div class="board">
                 <div *ngFor="let pixel of pixelBoard">
-                    <span [ngClass]="pixel.active ? 'pixel active' : pixel.corner ? 'pixel corner' : pixel.ball ? 'pixel ball' : 'pixel'"></span>
+                    <span [ngClass]="pixel.active ? 'pixel active' : pixel.ball ? 'pixel ball' : 'pixel'">
+                        <span *ngIf="pixel.corner" [ngClass]="pixel.corner.position == 'top' ? 'corner-line-top' : 
+                                    pixel.corner.position == 'bottom' ? 'corner-line-bottom' : 
+                                    pixel.corner.position == 'left' ? 'corner-line-left' : 
+                                    pixel.corner.position == 'right' ? 'corner-line-right' : ''"></span>
+                    </span>
                 </div>
             </div>
         </div>

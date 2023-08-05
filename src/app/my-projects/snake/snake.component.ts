@@ -1,5 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { BoardModel } from './models/board.model';
+import { BoardModel, CornerModel } from './models/board.model';
 
 @Component({
   selector: 'app-snake',
@@ -8,6 +8,7 @@ import { BoardModel } from './models/board.model';
 })
 export class SnakeComponent implements OnInit{
   public pixelBoard: Array<BoardModel>;
+  public corner: CornerModel;
   public snake: Array<number>;
   private moveInterval: any;
   private lastKey: string;
@@ -43,7 +44,6 @@ export class SnakeComponent implements OnInit{
         }
 
         this.clearIntervals();
-
       
         this.moveInterval = setInterval(() => {
           let step;
@@ -149,18 +149,52 @@ export class SnakeComponent implements OnInit{
   generateBoardPixels(): void {
     for(var i = 1; i <= 1000; i++) {
       let pixelBoard = {
-        index: i, active: false, corner: false, ball: false
+        index: i, active: false, corner: null, ball: false
       }
-      //Horizontal corners
-      if(i <= 40 || i > 960) { 
-        pixelBoard.corner = true;
+
+      //Top corner
+      if(i < 40 && i !== 1) { 
+        let corner = {
+          position: 'top'
+        }
+        pixelBoard.corner = corner;
       }
+      
+      //Bottom corner
+      if(i > 961 && i < 1000) { 
+        let corner = {
+          position: 'bottom'
+        }
+        pixelBoard.corner = corner;
+      }
+
       //Vertical corners
       for(var j = 1; j < 25; j++) {
-        if(((40 * j) + 1) == i || (40 * j) == i) { 
-          pixelBoard.corner = true;
+
+        //Left corner
+        if(((40 * j) + 1) == i && i !== 961) {
+          let corner = {
+            position: 'left'
+          }
+          pixelBoard.corner = corner;
+        }
+        //Right corner
+        if(((40 * j) == i) && i !== 1000) {
+          let corner = {
+            position: 'right'
+          }
+          pixelBoard.corner = corner;
         }
       }
+
+      //1, 40, 961, 1000
+      if(i == 1 || i == 40 || i == 961 || i == 1000) {
+        let corner = {
+          position: ''
+        }
+        pixelBoard.corner = corner;
+      }
+      
       this.pixelBoard.push(pixelBoard);
     }
   }
@@ -200,7 +234,6 @@ export class SnakeComponent implements OnInit{
     if(keyEvent == 'ArrowLeft' && lastKey == 'ArrowRight') {
       isNotValid = true;
     }
-
     return isNotValid;
   }
 
