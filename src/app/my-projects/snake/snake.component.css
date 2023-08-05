@@ -5,32 +5,31 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     overflow: hidden;
 }
 
 .wrapper {
-    background-color: #96D202;
-    width: 500px;
-    height: 500px;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 .nokia {
-    background-image: url(../../../assets/images/my-projects/nokia-3310.png);
-    height: 100%;
-    width: 450px;
-    transform: scale(1.5);
-    background-repeat: no-repeat;
     z-index: 10;
     position: absolute;
-    top: 250px;
+}
+
+.screen {
+    margin-top: 200px;
+    padding-top: 100px;
+    background-color: #96D202;
+    width: 500px;
+    height: 400px;
 }
 
 .board {
     position: relative;
+    margin: 0 auto;
     width: 440px;
     z-index: 1;
 }

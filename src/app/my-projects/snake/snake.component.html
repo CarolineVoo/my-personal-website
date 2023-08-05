@@ -1,9 +1,11 @@
 <div class="container">
     <div class="wrapper">
-        <div class="nokia"></div>
-        <div class="board">
-            <div *ngFor="let pixel of pixelBoard">
-                <span [ngClass]="pixel.active ? 'pixel active' : pixel.corner ? 'pixel corner' : pixel.ball ? 'pixel ball' : 'pixel'"></span>
+        <img class="nokia" src="assets/images/my-projects/nokia-3310-desktop.png"/>
+        <div class="screen">
+            <div class="board">
+                <div *ngFor="let pixel of pixelBoard">
+                    <span [ngClass]="pixel.active ? 'pixel active' : pixel.corner ? 'pixel corner' : pixel.ball ? 'pixel ball' : 'pixel'"></span>
+                </div>
             </div>
         </div>
     </div>
