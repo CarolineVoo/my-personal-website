@@ -37,17 +37,17 @@
         </div>
         <div class="controller"> 
             <div class="button-wrapper">
-                <button class="btn" (click)="keyEventMove('ArrowUp')"><span class="arrow arrow-up"></span></button>
+                <button class="btn" (click)="keyEventMove('ArrowUp')" [disabled]="buttonDisabled"><span class="arrow arrow-up"></span></button>
                 <div class="btn-left-right">
-                    <button class="btn" (click)="!buttonMoveDisabled ? keyEventMove('ArrowLeft') : !buttonRestartAndExitDisabled ? keyEventGameOver('ArrowLeft') : ''">
+                    <button class="btn" (click)="activeMoveKeyEvent ? keyEventMove('ArrowLeft') : activeGameOverKeyEvent ? keyEventGameOver('ArrowLeft') : ''" [disabled]="buttonDisabled">
                         <span class="arrow arrow-left"></span>
                     </button>
                     <button class="btn confirm"></button>
-                    <button class="btn" (click)="!buttonMoveDisabled ? keyEventMove('ArrowRight') : !buttonRestartAndExitDisabled ? keyEventGameOver('ArrowRight') : ''">
+                    <button class="btn" (click)="activeMoveKeyEvent ? keyEventMove('ArrowRight') : activeGameOverKeyEvent ? keyEventGameOver('ArrowRight') : ''" [disabled]="buttonDisabled">
                         <span class="arrow arrow-right"></span>
                     </button>
                 </div>
-                <button class="btn" (click)="keyEventMove('ArrowDown')"><span class="arrow arrow-down"></span></button>
+                <button class="btn" (click)="keyEventMove('ArrowDown')" [disabled]="buttonDisabled"><span class="arrow arrow-down"></span></button>
             </div>
         </div>
     </div>
