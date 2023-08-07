@@ -3,10 +3,10 @@
         <img class="nokia-desktop" src="assets/images/snake/nokia-3310-desktop.png"/>
         <img class="nokia-mobile" src="assets/images/snake/nokia-3310-mobile.png"/>
         <div class="screen">
-            <div *ngIf="showMenuScreen" class="menu-screen">
+            <!-- <div *ngIf="showMenuScreen" class="menu-screen">
                 <img src="assets/images/snake/snake-menu.png">
             </div>
-            <div *ngIf="showGameScreen" class="game">
+            <div *ngIf="showGameScreen" class="game-screen">
                 <div class="scoreboard">
                     <div class="points">{{scoreBoard}}</div>
                 </div>
@@ -18,6 +18,19 @@
                                         pixel.corner.position == 'left' ? 'corner-line-left' : 
                                         pixel.corner.position == 'right' ? 'corner-line-right' : ''"></span>
                         </span>
+                    </div>
+                </div>
+            </div> -->
+            <div class="game-over-screen">
+                <div>
+                    <h1> GAME OVER</h1>
+                    <div class="game-score">
+                        <p>Your score: </p>
+                        <p class="result">{{points}}</p>
+                    </div>
+                    <div class="game-over-buttons">
+                        <button> < Restart</button>
+                        <button>Exit ></button>
                     </div>
                 </div>
             </div>

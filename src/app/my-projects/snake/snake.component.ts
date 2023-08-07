@@ -9,7 +9,7 @@ import { BoardModel, CornerModel } from './models/board.model';
 export class SnakeComponent implements OnInit{
   public pixelBoard: Array<BoardModel>;
   public corner: CornerModel;
-  private points: number;
+  public points: number;
   public scoreBoard: string;
   public snake: Array<number>;
   public buttonDisabled: boolean;
@@ -143,7 +143,6 @@ export class SnakeComponent implements OnInit{
     }
 
     board.ball = true;
-
     this.pixelBoard[ballIndex] = board;
   }
 
@@ -194,6 +193,10 @@ export class SnakeComponent implements OnInit{
     setTimeout(() => {
       clearInterval(this.gameOverInterval);
     }, 4000);
+
+    setTimeout(() => {
+      
+    }, 5000);
   }
 
   //Generates the board
@@ -256,7 +259,7 @@ export class SnakeComponent implements OnInit{
       this.pixelBoard[i].active = false;
     }
   }
-
+  
   //Clears all intervals
   clearIntervals(): void {
     clearInterval(this.moveInterval);

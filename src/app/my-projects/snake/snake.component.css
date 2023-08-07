@@ -140,6 +140,43 @@
     height: auto;
 }
 
+.game-over-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 200px;
+    font-family: 'Digital Numbers', sans-serif;
+    color: #2B3D09;
+}
+
+.game-over-screen h1 {
+    font-size: 27px;
+}
+
+.game-score {
+    margin-top: 17px;
+}
+
+.result {
+    margin-top: 7px;
+    font-size: 30px;
+}
+
+.game-over-buttons {
+    margin-top: 30px;
+}
+
+.game-over-buttons button {
+    font-family: 'Digital Numbers', sans-serif;
+    color: #2B3D09;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid #2B3D09;
+    font-size: 16px;
+    margin: 0 25px;
+}
+
 
 @media only screen and (max-width: 650px) {
     .nokia-desktop {
