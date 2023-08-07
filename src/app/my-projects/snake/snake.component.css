@@ -26,6 +26,10 @@
     display: none;
 }
 
+.nokia-landscape {
+    display: none;
+}
+
 .screen {
     margin-top: 160px;
     padding-top: 100px;
@@ -177,6 +181,24 @@
     margin: 0 25px;
 }
 
+.go-back-button {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    cursor: pointer;
+    background-color: #516e67;
+    border: 0;
+    padding: 10px 12px;
+    border-radius: 100px;
+    transition: 0.5s transform;
+}
+
+.go-back-button img{
+    width: 25px;
+    height: 25px;
+    margin-right: 2px;
+}
+
 
 @media only screen and (max-width: 650px) {
     .nokia-desktop {
@@ -323,6 +345,13 @@
     .game-over-buttons button {
         font-size: 16px;
     }
+
+    .go-back-button {
+        position: absolute;
+        bottom: 15px;
+        z-index: 100;
+    }
+    
     
 }
 
@@ -339,9 +368,123 @@
 }
 
 @media screen and (orientation: landscape) and (max-height: 450px){
-   .screen {
-    background-color: red;
-   }
+    .nokia-desktop {
+        display: none;
+    }
+
+    .nokia-mobile {
+        display: none;
+    }
+
+    .nokia-landscape {
+            display: block;
+            z-index: 10;
+            position: absolute;
+            display: block;
+    }
+
+    .wrapper {
+        margin-right: 120px;
+    }
+    .screen {
+        margin-top: 0 !important;
+        padding-top: 55px !important;
+        background-color: #96D202;
+        width: 500px;
+        height: 400px;
+    } 
+
+    .scoreboard {
+        width: 387px;
+    }
+
+    .board {
+        margin: 5px auto 0 auto;
+    }
+
+    .pixel {
+        width: 8px;
+        height: 8px;
+    }
+    
+    .corner-line-top {
+        width: 18px;
+    }
+
+    .corner-line-bottom {
+        width: 18px;
+    }
+
+    .controller {
+        display: block;
+        z-index: 100;
+        position: absolute;
+        bottom: 0;
+        width: 275px;
+        right: 0;
+        /* background-color: rgba(0, 0, 0, 0.7);  */
+    }
+
+    .button-wrapper {
+        width: 300px;
+        padding: 20px 0;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .btn {
+        display: block;
+        margin: 0 auto;
+        padding: 17px;
+        border-radius: 100px;
+        background-color: rgba(255, 255, 255, 0.7);
+        box-sizing: border-box;
+    }
+
+    .arrow {
+        display: block;
+        width: 45px;
+        height: 45px;
+    }
+
+    .arrow-up {
+        background: url(../../../assets/images/snake/arrow-cnt-up.svg);
+        background-size: cover;
+    }
+
+    .arrow-down {
+        background: url(../../../assets/images/snake/arrow-cnt-down.svg);
+        background-size: cover;
+        box-sizing: border-box;
+    }
+
+    .btn-left-right {
+        display: flex;
+        align-items: center;
+    }
+
+    .arrow-left {
+        background: url(../../../assets/images/snake/arrow-cnt-left.svg);
+        background-size: cover;
+    }
+
+    .arrow-right {
+        background: url(../../../assets/images/snake/arrow-cnt-right.svg);
+        background-size: cover;
+    }
+
+    .confirm {
+        display: none;
+    }
+
+    .go-back-button {
+        position: absolute;
+        top: 15px;
+        bottom: auto;
+        z-index: 100;
+    }
+    
+
 }
 
 

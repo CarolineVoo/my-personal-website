@@ -2,6 +2,7 @@
     <div class="wrapper">
         <img class="nokia-desktop" src="assets/images/snake/nokia-3310-desktop.png"/>
         <img class="nokia-mobile" src="assets/images/snake/nokia-3310-mobile.png"/>
+        <img class="nokia-landscape" src="assets/images/snake/nokia-3310-landscape.png"/>
         <div class="screen">
             <div *ngIf="showMenuScreen" class="menu-screen">
                 <img src="assets/images/snake/snake-menu.png">
@@ -51,4 +52,8 @@
             </div>
         </div>
     </div>
+    
+    <button class="go-back-button" routerLink="/my-projects" routerLinkActive="activebutton">
+        <img src="assets/images/shared/left-arrow.png"/>
+    </button>
 </div>
