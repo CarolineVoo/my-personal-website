@@ -12,28 +12,47 @@ export class SnakeComponent implements OnInit{
   private points: number;
   public scoreBoard: string;
   public snake: Array<number>;
+  public buttonDisabled: boolean;
   private moveInterval: any;
+  private gameOverInterval: any;
   private lastKey: string;
+  public showMenuScreen: boolean;
+  public showGameScreen: boolean;
 
   ngOnInit(): void {
-    this.pixelBoard = new Array();
-    this.snake = new Array();
-    this.generateBoardPixels();
-    this.startGame();
+    this.initGame();
   }
 
   //Keyboard Event
   @HostListener('window:keyup', ['$event'])
   keyEvent(event: KeyboardEvent) {
-    this.keyEventMove(event.key);
+    if(!this.buttonDisabled) {
+      this.keyEventMove(event.key);
+    }
+  }
+
+  initGame(): void {
+    this.showMenuScreen = true;
+    this.showGameScreen = false;
+    setTimeout(() => {
+      this.showMenuScreen = false;
+      this.showGameScreen = true;
+      this.startGame();
+    }, 4000);
   }
 
   //Game Start - Snake position in middle 
   startGame(): void {
+    this.pixelBoard = new Array();
+    this.snake = new Array();
+    this.generateBoardPixels();
+
+    this.buttonDisabled = false;
     this.snake = [500, 540, 580];
     this.points = 0;
     this.scoreBoard = '0000';
-    this.keyEventMove('ArrowDown');
+    this.setActiveIndexBoard(this.snake);
+    // this.keyEventMove('ArrowDown');
     this.setBall();
   }
 
@@ -87,8 +106,7 @@ export class SnakeComponent implements OnInit{
           }
 
           if(this.snakeHitCornerOrItself(head)) {
-            console.log('Game Over');
-            this.clearIntervals();
+            this.gameOver();
             return;
           }
 
@@ -155,12 +173,27 @@ export class SnakeComponent implements OnInit{
     this.points++;
     let result = this.points.toString().padStart(4, '0');
     this.scoreBoard = result;
-    /*
-      let number = 2
-      let result = number.toString().padStart(5, '0')
-      console.log(result); // 00002
-    */
+  }
 
+  gameOver(): void {
+    this.buttonDisabled = true;
+    this.clearIntervals();
+    this.gameOverInterval = setInterval(() => {
+        this.snake.forEach(x => {
+          let pixel = this.pixelBoard.find(s => s.index == x)
+          pixel.active = false;
+        });
+        setTimeout(() => {
+          this.snake.forEach(x => {
+            let pixel = this.pixelBoard.find(s => s.index == x)
+            pixel.active = true;
+          })
+        }, 100);
+      }, 300);
+
+    setTimeout(() => {
+      clearInterval(this.gameOverInterval);
+    }, 4000);
   }
 
   //Generates the board

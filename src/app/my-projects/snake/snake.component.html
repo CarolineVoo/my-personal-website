@@ -3,29 +3,34 @@
         <img class="nokia-desktop" src="assets/images/snake/nokia-3310-desktop.png"/>
         <img class="nokia-mobile" src="assets/images/snake/nokia-3310-mobile.png"/>
         <div class="screen">
-            <div class="scoreboard">
-                <div class="points">{{scoreBoard}}</div>
+            <div *ngIf="showMenuScreen" class="menu-screen">
+                <img src="assets/images/snake/snake-menu.png">
             </div>
-            <div class="board">
-                <div *ngFor="let pixel of pixelBoard">
-                    <span [ngClass]="pixel.active ? 'pixel active' : pixel.ball ? 'pixel ball' : 'pixel'">
-                        <span *ngIf="pixel.corner" [ngClass]="pixel.corner.position == 'top' ? 'corner-line-top' : 
-                                    pixel.corner.position == 'bottom' ? 'corner-line-bottom' : 
-                                    pixel.corner.position == 'left' ? 'corner-line-left' : 
-                                    pixel.corner.position == 'right' ? 'corner-line-right' : ''"></span>
-                    </span>
+            <div *ngIf="showGameScreen" class="game">
+                <div class="scoreboard">
+                    <div class="points">{{scoreBoard}}</div>
+                </div>
+                <div class="board">
+                    <div *ngFor="let pixel of pixelBoard">
+                        <span [ngClass]="pixel.active ? 'pixel active' : pixel.ball ? 'pixel ball' : 'pixel'">
+                            <span *ngIf="pixel.corner" [ngClass]="pixel.corner.position == 'top' ? 'corner-line-top' : 
+                                        pixel.corner.position == 'bottom' ? 'corner-line-bottom' : 
+                                        pixel.corner.position == 'left' ? 'corner-line-left' : 
+                                        pixel.corner.position == 'right' ? 'corner-line-right' : ''"></span>
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="controller"> 
             <div class="button-wrapper">
-                <button class="btn" (click)="keyEventMove('ArrowUp')"><span class="arrow arrow-up"></span></button>
+                <button class="btn" (click)="keyEventMove('ArrowUp')" [disabled]="buttonDisabled"><span class="arrow arrow-up"></span></button>
                 <div class="btn-left-right">
-                    <button class="btn" (click)="keyEventMove('ArrowLeft')"><span class="arrow arrow-left"></span></button>
+                    <button class="btn" (click)="keyEventMove('ArrowLeft')" [disabled]="buttonDisabled"><span class="arrow arrow-left"></span></button>
                     <button class="btn confirm"></button>
-                    <button class="btn" (click)="keyEventMove('ArrowRight')"><span class="arrow arrow-right"></span></button>
+                    <button class="btn" (click)="keyEventMove('ArrowRight')" [disabled]="buttonDisabled"><span class="arrow arrow-right"></span></button>
                 </div>
-                <button class="btn" (click)="keyEventMove('ArrowDown')"><span class="arrow arrow-down"></span></button>
+                <button class="btn" (click)="keyEventMove('ArrowDown')" [disabled]="buttonDisabled"><span class="arrow arrow-down"></span></button>
             </div>
         </div>
     </div>

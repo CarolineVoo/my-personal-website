@@ -128,6 +128,18 @@
     display: none;
 }
 
+.menu-screen {
+    background-color: #799A03;
+    height: 500px;
+    margin: -40px auto 0 auto;
+    text-align: center;
+}
+
+.menu-screen img {
+    width: 500px;
+    height: auto;
+}
+
 
 @media only screen and (max-width: 650px) {
     .nokia-desktop {
@@ -159,6 +171,11 @@
     .pixel {
         width: 5.5px;
         height: 5.5px;
+    }
+
+    
+    .menu-screen img {
+        width: 375px;
     }
 
     .corner-line-top {
