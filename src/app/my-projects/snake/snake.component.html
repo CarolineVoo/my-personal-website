@@ -18,12 +18,15 @@
             </div>
         </div>
         <div class="controller"> 
-            <button class="btn" (click)="keyEventMove('ArrowUp')"><span class="arrow arrow-up"></span></button>
-            <div class="btn-left-right">
-                <button class="btn" (click)="keyEventMove('ArrowLeft')"><span class="arrow arrow-left"></span></button>
-                <button class="btn" (click)="keyEventMove('ArrowRight')"><span class="arrow arrow-right"></span></button>
+            <div class="button-wrapper">
+                <button class="btn" (click)="keyEventMove('ArrowUp')"><span class="arrow arrow-up"></span></button>
+                <div class="btn-left-right">
+                    <button class="btn" (click)="keyEventMove('ArrowLeft')"><span class="arrow arrow-left"></span></button>
+                    <button class="btn confirm"></button>
+                    <button class="btn" (click)="keyEventMove('ArrowRight')"><span class="arrow arrow-right"></span></button>
+                </div>
+                <button class="btn" (click)="keyEventMove('ArrowDown')"><span class="arrow arrow-down"></span></button>
             </div>
-            <button class="btn" (click)="keyEventMove('ArrowDown')"><span class="arrow arrow-down"></span></button>
         </div>
     </div>
 </div>

@@ -188,11 +188,15 @@
         z-index: 100;
         position: absolute;
         bottom: 0;
-        padding: 20px 0;
-        /* background-color: red; */
+        width: 100%;
         background-color: rgba(0, 0, 0, 0.7); 
-        width: 500px;
+    }
+
+    .button-wrapper {
+        width: 400px;
+        padding: 20px 0;
         height: auto;
+        margin: 0 auto;
     }
 
     .btn {
@@ -223,6 +227,7 @@
 
     .btn-left-right {
         display: flex;
+        align-items: center;
     }
 
     .arrow-left {
@@ -233,6 +238,23 @@
     .arrow-right {
         background: url(../../../assets/images/snake/arrow-cnt-right.svg);
         background-size: cover;
+    }
+
+    .confirm {
+        width: 70px;
+        height: 70px;
+    }
+
+    @media only screen and (max-width: 400px) {
+        .arrow {
+            width: 65px;
+            height: 65px;
+        }
+
+        .button-wrapper {
+            width: 350px;
+        }
+
     }
 
     
