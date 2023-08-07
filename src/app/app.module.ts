@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {HashLocationStrategy, LocationStrategy} from "@angular/common";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,7 +18,6 @@ import { ProjectsComponent } from './about-caroline/projects/projects.component'
 import { MyProjectsComponent } from './my-projects/my-projects.component';
 import { TicTacToeComponent } from './my-projects/tic-tac-toe/tic-tac-toe.component';
 import { SnakeComponent } from './my-projects/snake/snake.component';
-
 
 @NgModule({
   declarations: [
@@ -42,7 +42,9 @@ import { SnakeComponent } from './my-projects/snake/snake.component';
     AppRoutingModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

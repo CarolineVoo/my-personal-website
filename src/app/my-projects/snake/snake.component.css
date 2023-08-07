@@ -270,7 +270,7 @@
 
     .button-wrapper {
         width: 400px;
-        padding: 20px 0;
+        padding: 20px 0 30px 0;
         height: auto;
         margin: 0 auto;
     }
@@ -364,6 +364,16 @@
     .button-wrapper {
         width: 350px;
     }
+
+}
+
+@media only screen and (max-height: 720px){
+    .wrapper {
+        margin-top: -120px;
+    }
+}
+
+@media only screen and (max-width: 650px) and  (max-height: 720px){
 
 }
 
