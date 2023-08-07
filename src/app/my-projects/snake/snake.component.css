@@ -338,6 +338,14 @@
 
 }
 
+@media screen and (orientation: landscape) and (max-height: 450px){
+   .screen {
+    background-color: red;
+   }
+}
+
+
+
 
 /*
 96D202
