@@ -62,6 +62,7 @@ export class TicTacToeComponent implements OnInit, AfterViewInit {
     this.insertSelectedRow(index);
 
     if(this.computerModeActive) {
+      this.disableBoard = true;
       setTimeout(() => {
         this.insertComputerSelection();
       }, 1000);
@@ -69,9 +70,6 @@ export class TicTacToeComponent implements OnInit, AfterViewInit {
   }
 
   private insertComputerSelection(): void {
-    if(this.disableBoard) {
-      return;
-    }
     const randomRow = Math.floor(Math.random() * this.availableRows.length);
     let index = this.availableRows[randomRow];
 
@@ -100,6 +98,7 @@ export class TicTacToeComponent implements OnInit, AfterViewInit {
     }
 
     this.insertSelectedRow(index);
+    this.disableBoard = false;
   } 
 
 
