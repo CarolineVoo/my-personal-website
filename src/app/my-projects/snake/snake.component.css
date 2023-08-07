@@ -14,13 +14,18 @@
     justify-content: center;
 }
 
-.nokia {
+.nokia-desktop {
     z-index: 10;
     position: absolute;
+    display: block;
+}
+
+.nokia-mobile {
+    display: none;
 }
 
 .screen {
-    margin-top: 200px;
+    margin-top: 180px;
     padding-top: 100px;
     background-color: #96D202;
     width: 500px;
@@ -61,6 +66,12 @@
 
 .ball {
     background-color: #2B3D09;
+}
+
+.points {
+    text-align: right;
+    margin-right: 40px;
+    display: block;
 }
 
 .corner-line-top {
@@ -104,6 +115,59 @@
     background-color: #2B3D09;
     z-index: 200;
 }
+
+
+@media only screen and (max-width: 650px) {
+    .nokia-desktop {
+        display: none;
+    }
+
+    .nokia-mobile {
+        display: block;
+        z-index: 10;
+        position: absolute;
+    }
+
+    .points {
+        margin-right: 55px;
+    }
+
+    .screen {
+        margin-top: 100px;
+        padding-top: 100px;
+        width: 400px;
+        height: 300px;
+    } 
+    
+    .pixel {
+        width: 5.5px;
+        height: 5.5px;
+    }
+
+    .corner-line-top {
+        width: 14px;
+        height: 3px;
+        left: -4px;
+    }
+    
+    .corner-line-bottom {
+        width: 14px;
+        height: 3px;
+        left: -4px;
+    }
+    
+    .corner-line-left {
+        width: 3px;
+        height: 8px;
+    }
+    
+    .corner-line-right {
+        width: 3px;
+        height: 8px;
+    }
+    
+}
+
 
 /*
 96D202

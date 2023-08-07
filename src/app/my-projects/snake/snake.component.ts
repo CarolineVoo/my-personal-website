@@ -9,6 +9,7 @@ import { BoardModel, CornerModel } from './models/board.model';
 export class SnakeComponent implements OnInit{
   public pixelBoard: Array<BoardModel>;
   public corner: CornerModel;
+  public points: number;
   public snake: Array<number>;
   private moveInterval: any;
   private lastKey: string;
@@ -16,6 +17,7 @@ export class SnakeComponent implements OnInit{
   ngOnInit(): void {
     this.pixelBoard = new Array();
     this.snake = new Array();
+    this.points = 0;
     this.generateBoardPixels();
     this.startGame();
   }
@@ -131,6 +133,7 @@ export class SnakeComponent implements OnInit{
     const pixel = this.pixelBoard.find(x => x.index == head);
     if(pixel.ball) {
       isBall = true;
+      this.points++;
     }
     return isBall;
   }
