@@ -1,9 +1,11 @@
 <div class="container">
     <div class="wrapper">
-        <img class="nokia-desktop" src="assets/images/my-projects/nokia-3310-desktop.png"/>
-        <img class="nokia-mobile" src="assets/images/my-projects/nokia-3310-mobile.png"/>
+        <img class="nokia-desktop" src="assets/images/snake/nokia-3310-desktop.png"/>
+        <img class="nokia-mobile" src="assets/images/snake/nokia-3310-mobile.png"/>
         <div class="screen">
-            <div class="points">{{points}}</div>
+            <div class="scoreboard">
+                <div class="points">{{scoreBoard}}</div>
+            </div>
             <div class="board">
                 <div *ngFor="let pixel of pixelBoard">
                     <span [ngClass]="pixel.active ? 'pixel active' : pixel.ball ? 'pixel ball' : 'pixel'">
@@ -14,6 +16,14 @@
                     </span>
                 </div>
             </div>
+        </div>
+        <div class="controller"> 
+            <button class="btn" (click)="keyEventMove('ArrowUp')"><span class="arrow arrow-up"></span></button>
+            <div class="btn-left-right">
+                <button class="btn" (click)="keyEventMove('ArrowLeft')"><span class="arrow arrow-left"></span></button>
+                <button class="btn" (click)="keyEventMove('ArrowRight')"><span class="arrow arrow-right"></span></button>
+            </div>
+            <button class="btn" (click)="keyEventMove('ArrowDown')"><span class="arrow arrow-down"></span></button>
         </div>
     </div>
 </div>

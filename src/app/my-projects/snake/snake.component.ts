@@ -9,7 +9,8 @@ import { BoardModel, CornerModel } from './models/board.model';
 export class SnakeComponent implements OnInit{
   public pixelBoard: Array<BoardModel>;
   public corner: CornerModel;
-  public points: number;
+  private points: number;
+  public scoreBoard: string;
   public snake: Array<number>;
   private moveInterval: any;
   private lastKey: string;
@@ -17,7 +18,6 @@ export class SnakeComponent implements OnInit{
   ngOnInit(): void {
     this.pixelBoard = new Array();
     this.snake = new Array();
-    this.points = 0;
     this.generateBoardPixels();
     this.startGame();
   }
@@ -31,6 +31,8 @@ export class SnakeComponent implements OnInit{
   //Game Start - Snake position in middle 
   startGame(): void {
     this.snake = [500, 540, 580];
+    this.points = 0;
+    this.scoreBoard = '0000';
     this.keyEventMove('ArrowDown');
     this.setBall();
   }
@@ -133,7 +135,7 @@ export class SnakeComponent implements OnInit{
     const pixel = this.pixelBoard.find(x => x.index == head);
     if(pixel.ball) {
       isBall = true;
-      this.points++;
+      this.setPoints();
     }
     return isBall;
   }
@@ -146,6 +148,19 @@ export class SnakeComponent implements OnInit{
       isHit = true;
     }
     return isHit;
+  }
+
+  //Points
+  setPoints(): void {
+    this.points++;
+    let result = this.points.toString().padStart(4, '0');
+    this.scoreBoard = result;
+    /*
+      let number = 2
+      let result = number.toString().padStart(5, '0')
+      console.log(result); // 00002
+    */
+
   }
 
   //Generates the board
