@@ -3,7 +3,7 @@
         <img class="nokia-desktop" src="assets/images/snake/nokia-3310-desktop.png"/>
         <img class="nokia-mobile" src="assets/images/snake/nokia-3310-mobile.png"/>
         <div class="screen">
-            <!-- <div *ngIf="showMenuScreen" class="menu-screen">
+            <div *ngIf="showMenuScreen" class="menu-screen">
                 <img src="assets/images/snake/snake-menu.png">
             </div>
             <div *ngIf="showGameScreen" class="game-screen">
@@ -20,7 +20,7 @@
                         </span>
                     </div>
                 </div>
-            </div> -->
+            </div>
             <div class="game-over-screen">
                 <div>
                     <h1> GAME OVER</h1>
@@ -37,13 +37,17 @@
         </div>
         <div class="controller"> 
             <div class="button-wrapper">
-                <button class="btn" (click)="keyEventMove('ArrowUp')" [disabled]="buttonDisabled"><span class="arrow arrow-up"></span></button>
+                <button class="btn" (click)="keyEventMove('ArrowUp')"><span class="arrow arrow-up"></span></button>
                 <div class="btn-left-right">
-                    <button class="btn" (click)="keyEventMove('ArrowLeft')" [disabled]="buttonDisabled"><span class="arrow arrow-left"></span></button>
+                    <button class="btn" (click)="!buttonMoveDisabled ? keyEventMove('ArrowLeft') : !buttonRestartAndExitDisabled ? keyEventGameOver('ArrowLeft') : ''">
+                        <span class="arrow arrow-left"></span>
+                    </button>
                     <button class="btn confirm"></button>
-                    <button class="btn" (click)="keyEventMove('ArrowRight')" [disabled]="buttonDisabled"><span class="arrow arrow-right"></span></button>
+                    <button class="btn" (click)="!buttonMoveDisabled ? keyEventMove('ArrowRight') : !buttonRestartAndExitDisabled ? keyEventGameOver('ArrowRight') : ''">
+                        <span class="arrow arrow-right"></span>
+                    </button>
                 </div>
-                <button class="btn" (click)="keyEventMove('ArrowDown')" [disabled]="buttonDisabled"><span class="arrow arrow-down"></span></button>
+                <button class="btn" (click)="keyEventMove('ArrowDown')"><span class="arrow arrow-down"></span></button>
             </div>
         </div>
     </div>

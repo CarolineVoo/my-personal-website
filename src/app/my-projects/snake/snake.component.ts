@@ -1,5 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { BoardModel, CornerModel } from './models/board.model';
+import {Router} from "@angular/router"
 
 @Component({
   selector: 'app-snake',
@@ -13,11 +14,17 @@ export class SnakeComponent implements OnInit{
   public scoreBoard: string;
   public snake: Array<number>;
   public buttonDisabled: boolean;
+  public buttonMoveDisabled: boolean;
+  public buttonRestartAndExitDisabled: boolean;
   private moveInterval: any;
   private gameOverInterval: any;
   private lastKey: string;
   public showMenuScreen: boolean;
   public showGameScreen: boolean;
+  public showGameOverScreen: boolean;
+
+
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     this.initGame();
@@ -26,14 +33,21 @@ export class SnakeComponent implements OnInit{
   //Keyboard Event
   @HostListener('window:keyup', ['$event'])
   keyEvent(event: KeyboardEvent) {
-    if(!this.buttonDisabled) {
+    if(!this.buttonMoveDisabled) {
       this.keyEventMove(event.key);
+    }
+
+    if(!this.buttonRestartAndExitDisabled) {
+      this.keyEventGameOver(event.key)
     }
   }
 
   initGame(): void {
     this.showMenuScreen = true;
     this.showGameScreen = false;
+    this.showGameOverScreen = false;
+    this.buttonRestartAndExitDisabled = true;
+
     setTimeout(() => {
       this.showMenuScreen = false;
       this.showGameScreen = true;
@@ -46,13 +60,14 @@ export class SnakeComponent implements OnInit{
     this.pixelBoard = new Array();
     this.snake = new Array();
     this.generateBoardPixels();
+    this.lastKey = null;
 
-    this.buttonDisabled = false;
-    this.snake = [500, 540, 580];
+    this.buttonMoveDisabled = false;
+    this.snake = [100, 140, 180];
     this.points = 0;
     this.scoreBoard = '0000';
-    this.setActiveIndexBoard(this.snake);
-    // this.keyEventMove('ArrowDown');
+
+    this.keyEventMove('ArrowDown');
     this.setBall();
   }
 
@@ -65,7 +80,6 @@ export class SnakeComponent implements OnInit{
         if(this.isKeyEventNotValid(keyEvent,this.lastKey)) {
           return;
         }
-
         this.clearIntervals();
       
         this.moveInterval = setInterval(() => {
@@ -174,8 +188,9 @@ export class SnakeComponent implements OnInit{
     this.scoreBoard = result;
   }
 
+  //Game over
   gameOver(): void {
-    this.buttonDisabled = true;
+    this.buttonMoveDisabled = true;
     this.clearIntervals();
     this.gameOverInterval = setInterval(() => {
         this.snake.forEach(x => {
@@ -195,8 +210,26 @@ export class SnakeComponent implements OnInit{
     }, 4000);
 
     setTimeout(() => {
-      
+      this.showGameOverScreen = true;
+      this.showGameScreen = false;
+      this.buttonRestartAndExitDisabled = false;
     }, 5000);
+  }
+
+  keyEventGameOver(keyEvent: string): void {
+    if(keyEvent == 'ArrowRight' || keyEvent == 'ArrowLeft') {
+      switch(keyEvent) {
+        case 'ArrowLeft':
+          this.buttonRestartAndExitDisabled = true;
+          this.showGameScreen = true;
+          this.showGameOverScreen = false;
+          this.startGame();
+          break;
+        case 'ArrowRight':
+          this.router.navigate(['/my-projects/']);
+          break;
+      }
+    }
   }
 
   //Generates the board
@@ -259,7 +292,7 @@ export class SnakeComponent implements OnInit{
       this.pixelBoard[i].active = false;
     }
   }
-  
+
   //Clears all intervals
   clearIntervals(): void {
     clearInterval(this.moveInterval);

@@ -145,26 +145,26 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 200px;
+    height: 275px;
     font-family: 'Digital Numbers', sans-serif;
     color: #2B3D09;
 }
 
 .game-over-screen h1 {
-    font-size: 27px;
+    font-size: 35px;
 }
 
 .game-score {
-    margin-top: 17px;
+    margin-top: 25px;
 }
 
 .result {
-    margin-top: 7px;
-    font-size: 30px;
+    margin-top: 10px;
+    font-size: 35px;
 }
 
 .game-over-buttons {
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 .game-over-buttons button {
@@ -299,19 +299,43 @@
         height: 70px;
     }
 
-    @media only screen and (max-width: 400px) {
-        .arrow {
-            width: 65px;
-            height: 65px;
-        }
+    .game-over-screen {
+        height: 200px;
+    }
+    
+    .game-over-screen h1 {
+        font-size: 27px;
+    }
+    
+    .game-score {
+        margin-top: 17px;
+    }
+    
+    .result {
+        margin-top: 7px;
+        font-size: 30px;
+    }
+    
+    .game-over-buttons {
+        margin-top: 30px;
+    }
+    
+    .game-over-buttons button {
+        font-size: 16px;
+    }
+    
+}
 
-        .button-wrapper {
-            width: 350px;
-        }
-
+@media only screen and (max-width: 400px) {
+    .arrow {
+        width: 65px;
+        height: 65px;
     }
 
-    
+    .button-wrapper {
+        width: 350px;
+    }
+
 }
 
 
