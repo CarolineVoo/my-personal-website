@@ -76,8 +76,8 @@ export class SnakeComponent implements OnInit{
       return;
     }
 
-    if(keyEvent == 'ArrowDown' || keyEvent == 'ArrowUp' ||
-      keyEvent == 'ArrowRight' || keyEvent == 'ArrowLeft') {
+    if(keyEvent === 'ArrowDown' || keyEvent === 'ArrowUp' ||
+      keyEvent === 'ArrowRight' || keyEvent === 'ArrowLeft') {
 
         //Validate key event
         if(this.isKeyEventNotValid(keyEvent,this.lastKey)) {
@@ -164,7 +164,7 @@ export class SnakeComponent implements OnInit{
   //Check if snake hits the ball 
   snakeHitBall(head: number): boolean {
     let isBall = false;
-    const pixel = this.pixelBoard.find(x => x.index == head);
+    const pixel = this.pixelBoard.find(x => x.index === head);
     if(pixel.ball) {
       isBall = true;
       this.setPoints();
@@ -175,7 +175,7 @@ export class SnakeComponent implements OnInit{
   //Check if snake hits the corner
   snakeHitCornerOrItself(head: number): boolean {
     let isHit = false;
-    const pixel = this.pixelBoard.find(x => x.index == head);
+    const pixel = this.pixelBoard.find(x => x.index === head);
     if(pixel.corner || pixel.active) {
       isHit = true;
     }
@@ -195,12 +195,12 @@ export class SnakeComponent implements OnInit{
     this.clearIntervals();
     this.gameOverInterval = setInterval(() => {
         this.snake.forEach(x => {
-          let pixel = this.pixelBoard.find(s => s.index == x)
+          let pixel = this.pixelBoard.find(s => s.index === x)
           pixel.active = false;
         });
         setTimeout(() => {
           this.snake.forEach(x => {
-            let pixel = this.pixelBoard.find(s => s.index == x)
+            let pixel = this.pixelBoard.find(s => s.index === x)
             pixel.active = true;
           })
         }, 100);
@@ -222,7 +222,7 @@ export class SnakeComponent implements OnInit{
       return;
     }
 
-    if(keyEvent == 'ArrowRight' || keyEvent == 'ArrowLeft') {
+    if(keyEvent === 'ArrowRight' || keyEvent === 'ArrowLeft') {
       switch(keyEvent) {
         case 'ArrowLeft':
           this.activeGameOverKeyEvent = false;
@@ -264,14 +264,14 @@ export class SnakeComponent implements OnInit{
       for(var j = 1; j < 25; j++) {
 
         //Left corner
-        if(((40 * j) + 1) == i && i !== 961) {
+        if(((40 * j) + 1) === i && i !== 961) {
           let corner = {
             position: 'left'
           }
           pixelBoard.corner = corner;
         }
         //Right corner
-        if(((40 * j) == i) && i !== 1000) {
+        if(((40 * j) === i) && i !== 1000) {
           let corner = {
             position: 'right'
           }
@@ -280,7 +280,7 @@ export class SnakeComponent implements OnInit{
       }
 
       //1, 40, 961, 1000
-      if(i == 1 || i == 40 || i == 961 || i == 1000) {
+      if(i === 1 || i === 40 || i === 961 || i === 1000) {
         let corner = {
           position: ''
         }
@@ -307,23 +307,23 @@ export class SnakeComponent implements OnInit{
   isKeyEventNotValid(keyEvent: string, lastKey: string): boolean {
     let isNotValid = false;
 
-    if(keyEvent == lastKey) {
+    if(keyEvent === lastKey) {
       isNotValid = true;
     }
 
-    if(keyEvent == 'ArrowDown' && lastKey == 'ArrowUp') {
+    if(keyEvent === 'ArrowDown' && lastKey === 'ArrowUp') {
       isNotValid = true;
     }
 
-    if(keyEvent == 'ArrowUp' && lastKey == 'ArrowDown') {
+    if(keyEvent === 'ArrowUp' && lastKey === 'ArrowDown') {
       isNotValid = true;
     }
 
-    if(keyEvent == 'ArrowRight' && lastKey == 'ArrowLeft') {
+    if(keyEvent === 'ArrowRight' && lastKey === 'ArrowLeft') {
       isNotValid = true;
     }
 
-    if(keyEvent == 'ArrowLeft' && lastKey == 'ArrowRight') {
+    if(keyEvent === 'ArrowLeft' && lastKey === 'ArrowRight') {
       isNotValid = true;
     }
     return isNotValid;

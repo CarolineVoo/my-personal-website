@@ -45,13 +45,13 @@ export class TicTacToeComponent implements OnInit, AfterViewInit {
 
   public setMode(mode: string): void {
     this.startPage = false;
-    if(mode == 'onePlayer') {
+    if(mode === 'onePlayer') {
       this.computerModeActive = true;
       this.restart();
       console.log('onePlayer');
     }
 
-    if(mode == 'twoPlayers') {
+    if(mode === 'twoPlayers') {
       this.computerModeActive = false;
       this.restart();
       console.log('twoPlayers');
@@ -78,7 +78,7 @@ export class TicTacToeComponent implements OnInit, AfterViewInit {
         let rowArray = [];
         
         for(let j = 0; j < this.selectedRowPlayerOne.length; j++) {
-          const row = this.ticTacToeWinningResult[i].find(x => x == this.selectedRowPlayerOne[j]);
+          const row = this.ticTacToeWinningResult[i].find(x => x === this.selectedRowPlayerOne[j]);
           if(row) {
             rowArray.push(row);
           }
@@ -87,8 +87,8 @@ export class TicTacToeComponent implements OnInit, AfterViewInit {
         if(rowArray.length >= 2) {
           const almostThreeInRow = this.ticTacToeWinningResult[i];
           for(let j = 0; j < almostThreeInRow.length; j++) {
-            const checkAlreadySelectedRow = this.chosenRows.find(x => x == almostThreeInRow[j]);
-            if(!checkAlreadySelectedRow && checkAlreadySelectedRow == undefined) {
+            const checkAlreadySelectedRow = this.chosenRows.find(x => x === almostThreeInRow[j]);
+            if(!checkAlreadySelectedRow && checkAlreadySelectedRow === undefined) {
               index = almostThreeInRow[j];
             }
           }
@@ -132,7 +132,7 @@ export class TicTacToeComponent implements OnInit, AfterViewInit {
   }
 
   private insertSelectedRow(index: number) {
-    const row = this.ticTacToeBoard.find(x => x.index == index);
+    const row = this.ticTacToeBoard.find(x => x.index === index);
     if(row) {
       row.selected = true;
     }
